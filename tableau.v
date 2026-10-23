@@ -4,7 +4,7 @@ Require Import fml.
 Require Import semantics.
 Require Import closure.
 Require Import seqt.
-Require Import size.
+(*Require Import size.*)
 Require Import ptree.
 Require Import proper.
 Require Import rules.

@@ -44,6 +44,20 @@ Fixpoint neg_nnf (xi : nnf) : nnf :=
   | anext phi    => enext (neg_nnf phi)
   end.
 
+Lemma neg_nnf_involutive : forall phi,
+  neg_nnf (neg_nnf phi) = phi.
+Proof.
+  induction phi; simpl; try rewrite IHphi1; try rewrite IHphi2;
+    try rewrite IHphi; reflexivity.
+Qed.
+
+Definition nnf_isatomic (phi : nnf) : Prop :=
+  match phi with
+  | var _ => True
+  | neg _ => True
+  | _     => False
+  end.
+
 Definition nnf_isalpha (phi : nnf) : Prop :=
   match phi with
   | and _ _ => True
@@ -95,6 +109,25 @@ Definition nnf_isbeta (phi : nnf) : Prop :=
   | eunt _ _ => True
   | aunt _ _ => True
   | _       => False
+  end.
+
+Definition nnf_isjump (phi : nnf) : Prop :=
+  match phi with
+  | enext _ => True
+  | anext _ => True
+  | _       => False
+  end.
+
+Definition nnf_iseu (phi : nnf) : bool :=
+  match phi with
+  | eunt _ _ => true
+  | _        => false
+  end.
+
+Definition nnf_isau (phi : nnf) : bool :=
+  match phi with
+  | aunt _ _ => true
+  | _        => false
   end.
 
 Definition nnf_isbeta_dec (phi : nnf) :

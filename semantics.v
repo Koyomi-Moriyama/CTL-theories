@@ -559,6 +559,13 @@ Lemma unsat_beta1_sat_beta2 (KM : kripke_complete M):
   apply Hsat in Hphi. simpl in Hphi. exact Hphi.
   Qed.
 
+Lemma sat_D_rule : forall [w s], kripke_complete M -> sat M w (s_G s) ->
+   sat M w (s_G (D_rule s)).
+Proof.
+  intros w s _ Hsat. exact Hsat.
+Qed.
+
+
 (*edit mark : for every child in jump_child exists a successor sat it*)
 Lemma sat_jump_child :
   forall [w s child], kripke_complete M -> sat M w (s_G s) ->
@@ -567,8 +574,11 @@ Proof.
   intros w s child KM Hsat Hchild.
   unfold jump_child in Hchild.
   destruct (unenext (s_G s)) as [|phi L] eqn:Hun.
-
-  - simpl in Hchild.
+  - apply filter_In in Hchild.
+    destruct Hchild as [Hchild  Hnblock].
+    simpl in Hchild. unfold temporary_jump_child in Hchild.
+    rewrite Hun in Hchild.
+    simpl in Hchild.
     destruct Hchild as [Hchild | Hchild].
     + rewrite <- Hchild. simpl.
       destruct (KM w) as [si Hpath]. 
@@ -582,7 +592,11 @@ Proof.
         -- exact Hsat.
         -- rewrite <- Hroot. exact (Hstep 0).
     + contradiction.
-  - simpl in Hchild.
+  - apply filter_In in Hchild.
+    destruct Hchild as [Hchild  Hnblock].
+    simpl in Hchild. unfold temporary_jump_child in Hchild.
+    rewrite Hun in Hchild.
+    simpl in Hchild.
     destruct Hchild as [Hchild | Hchild].
     + rewrite <- Hchild. simpl.
       assert (Hin_phi : In phi (unenext (s_G s))).

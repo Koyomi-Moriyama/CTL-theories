@@ -1,0 +1,15 @@
+# Coq-generated files
+*.aux
+*.cache
+*.glob
+*.vo
+*.vok
+*.vos
+
+# Windows metadata
+*:Zone.Identifier
+
+# Generated theory files
+/tableau.v
+/traverse.v
+/hintikka.v

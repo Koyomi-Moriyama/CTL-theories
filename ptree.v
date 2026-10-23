@@ -15,25 +15,31 @@ Require Import Lia.
 Set Implicit Arguments.
 
 
-(* ptree stands for "prove tree" *)
+(* ptree stands for "pruned tree" *)
+Inductive beta_type :=
+  | beta_or
+  | beta_eu
+  | beta_au.
+
 Inductive ptree :=
   | talpha : ptree -> full_seqt -> nnf -> ptree
-  | talt_au   : ptree -> ptree -> full_seqt -> nnf -> ptree
-  | talt_eu   : ptree -> ptree -> full_seqt -> nnf -> ptree
-  | talt_or   : ptree -> ptree -> full_seqt -> nnf -> ptree
-  | tjump  : list ptree -> full_seqt -> ptree
-  | tloop  : full_seqt -> ptree.
+  | tbeta1 : ptree -> beta_type -> full_seqt -> nnf -> ptree
+  | tbeta2 : ptree -> beta_type -> full_seqt -> nnf -> ptree
+  | talt   : ptree -> ptree -> beta_type -> full_seqt -> nnf -> ptree
+  | tjump  : list ptree -> full_seqt -> nnf -> ptree.
 
-Definition df_t : ptree := tloop df_fseqt.
+Definition beta_type_eqdec (x y : beta_type) : {x = y} + {x <> y}.
+Proof. decide equality. Defined.
+
+Definition df_t : ptree := tjump [] df_fseqt df_nnf.
 
 Definition t_fseqt (x : ptree) : full_seqt :=
   match x with
   | talpha _ fs _ => fs
-  | talt_au _ _ fs _ => fs
-  | talt_eu _ _ fs _ => fs
-  | talt_or _ _ fs _ => fs
-  | tjump _ fs    => fs
-  | tloop fs      => fs
+  | tbeta1 _ _ fs _  => fs
+  | tbeta2 _ _  fs _ => fs
+  | talt _ _ _  fs _ => fs
+  | tjump _ fs _   => fs
   end.
 
 Definition t_dose (t : ptree) := fst (t_fseqt t).
@@ -46,10 +52,10 @@ Definition t_R (t : ptree) := s_R (t_dose t).
 Definition t_uev (t : ptree) := s_uev (t_upse t).
 Definition t_mrk  (t : ptree) := s_mrk (t_upse t).
 
+
 Definition t_isstate (t : ptree) : Prop :=
   match t with
-  | tjump _ _  => True
-  | tloop _   => True
+  | tjump _ _ _  => True
   | _         => False
   end.
 
@@ -61,57 +67,56 @@ Definition t_isalpha (t : ptree) :=
 
 Definition t_isbeta (t : ptree) : Prop :=
   match t with
-  | talt_ _ _ _ _ => True
-  | 
+  | tbeta1 _ _ _ _  => True
+  | tbeta2 _ _ _ _ => True
+  | talt _ _ _ _ _ => True
   | _            => False
   end.
 
-Definition t_isbeta1 (t : ptree) : Prop :=
+Definition t_isbeta_or (t : ptree) : Prop :=
   match t with
-  | tbeta1 _ _ _ => True
+  | tbeta1 _ beta_or _ _  => True
+  | tbeta2 _ beta_or _ _ => True
+  | talt _ _ beta_or _ _ => True
   | _            => False
   end.
 
-Definition t_isbeta2 (t : ptree) : Prop :=
+Definition t_isbeta_au (t : ptree) : Prop :=
   match t with
-  | tbeta2 _ _ _ => True
+  | tbeta1 _ beta_au _ _  => True
+  | tbeta2 _ beta_au _ _ => True
+  | talt _ _ beta_au _ _ => True
   | _            => False
   end.
 
-Definition t_isalt (t : ptree) : Prop :=
+  Definition t_isbeta_eu (t : ptree) : Prop :=
   match t with
-  | talt _ _ _ _ => True
+  | tbeta1 _ beta_eu _ _  => True
+  | tbeta2 _ beta_eu _ _ => True
+  | talt _ _ beta_eu _ _ => True
   | _            => False
   end.
 
 Definition t_isjump (t : ptree) : Prop :=
   match t with
-  | tjump _ _  => True
+  | tjump _ _ _  => True
   | _         => False
-  end.
-
-Definition t_isloop (t : ptree) : Prop :=
-  match t with
-  | tloop _ => True
-  | _       => False
   end.
 
 Definition t_prinform (t : ptree) : option nnf :=
   match t with
   | talpha _ _ phi => Some phi
-  | tbeta1 _ _ phi => Some phi
-  | tbeta2 _ _ phi => Some phi
-  | talt _ _ _ phi => Some phi
-  | tjump _ _       => None
-  | tloop _        => None
+  | tbeta1 _ _ _ phi => Some phi
+  | tbeta2 _ _ _ phi => Some phi
+  | talt _ _ _ _ phi => Some phi  
+  | tjump _ _ phi       => Some phi
   end.
 
-  
 
 Fixpoint ptree_eqdec (x y : ptree) : {x = y} + {x <> y}.
 Proof.
-decide equality; 
-(apply nnf_eqdec || apply full_seqt_eqdec || decide equality; try apply nnf_eqdec;
+decide equality;
+(apply nnf_eqdec || apply full_seqt_eqdec|| decide equality; try apply nnf_eqdec;
     try apply full_seqt_eqdec;
     try (apply list_eq_dec; apply ptree_eqdec)).
 Defined.
@@ -122,10 +127,6 @@ Proof. destruct x; ((now left) || (now right)). Defined.
 
 Definition t_isbeta_dec (x : ptree) :
   {t_isbeta x} + {~ t_isbeta x}.
-Proof. destruct x; ((now left) || (now right)). Defined.
-
-Definition t_isloop_dec (x : ptree) :
-  {t_isloop x} + {~ t_isloop x}.
 Proof. destruct x; ((now left) || (now right)). Defined.
 
 Definition t_isstate_dec (x : ptree) :
@@ -143,11 +144,10 @@ Proof. decide equality. Defined.
 Definition is_child (x y : ptree) : Prop :=
   match y with
   | talpha c _ _   => x = c
-  | tbeta1 c _ _   => x = c
-  | tbeta2 c _ _   => x = c
-  | talt c1 c2 _ _ => x = c1 \/ x = c2
-  | tjump c _      => In x c 
-  | tloop _        => False
+  | tbeta1 c _ _ _ => x = c
+  | tbeta2 c _ _ _ => x = c
+  | talt c1 c2 _ _ _ => x = c1 \/ x = c2
+  | tjump c _ _     => In x c 
   end.
 
 Definition desc := clos_trans _ is_child.
@@ -202,26 +202,19 @@ intros x y z xley ylez. destruct ylez as [yltz|yeqz].
 - rewrite <- yeqz. assumption.
 Qed.
 
-Require Import Coq.Lists.List.
-Import ListNotations.
-
-Require Import Coq.Lists.List.
-Import ListNotations.
-
 Fixpoint tree_size (t : ptree) : nat :=
   match t with
   | talpha c _ _ => S (tree_size c)
-  | tbeta1 c _ _ => S (tree_size c)
-  | tbeta2 c _ _ => S (tree_size c)
-  | talt c1 c2 _ _ => S (tree_size c1 + tree_size c2)
-  | tjump cs _ =>
+  | tbeta1 c _ _ _ => S (tree_size c)
+  | tbeta2 c _ _ _ => S (tree_size c)
+  | talt c1 c2 _ _ _ => S (tree_size c1 + tree_size c2)
+  | tjump cs _ _ =>
       S
         ((fix tree_size_list (cs : list ptree) : nat :=
             match cs with
             | [] => 0
             | c :: cs' => tree_size c + tree_size_list cs'
             end) cs)
-  | tloop _ => 1
   end.
 
 Lemma child_lt_tree_size [x y] : is_child y x -> tree_size y < tree_size x.
@@ -259,8 +252,7 @@ Qed.
 Definition desc_dec : forall z x, {z </ x} + {~ z </ x}.
 Proof.
 fix F 2.
-intros z x. revert z. induction x as [c IHc fs phi|c IHc fs phi|
-c IHc fs phi|c1 IHc1 c2 IHc2 fs phi|cs fs |fs];
+intros z x. revert z. induction x as [c IHc fs phi| c IHc fs phi| c IHc fs phi| c1 IHc1 c2 IHc2 fs phi|cs fs phi];
 try (
 intro z; destruct (IHc z) as [zltc|nzltc];
   [left; right with c; try assumption; left; simpl; reflexivity|
@@ -309,16 +301,14 @@ intro z; destruct (IHc z) as [zltc|nzltc];
         + simpl in H. destruct H as [Hcy | Hycs].
         * apply nzltc. apply clos_tn1_trans. rewrite <- Hcy in H0. exact H0.
         * apply nzltcs. apply clos_tn1_trans. econstructor 2 with (y := y).
-          simpl. exact Hycs. exact H0.
-- right. intro Hctr. apply clos_trans_tn1 in Hctr.
-  inversion Hctr; contradiction. 
+          simpl. exact Hycs. exact H0. 
 Defined.
 
 Theorem desc_child_or_child_dec [x z] : z </ x ->
   {y | is_child y x /\ z </ y} + {is_child z x}.
 Proof.
-intro zltx. induction x as [c IHc fs phi|c IHc fs phi|
-c IHc fs phi|c1 IHc1 c2 IHc2 fs phi|cs fs |fs]; try (
+intro zltx. induction x as [c IHc fs ph| c IHc fs ph| c IHc fs ph|c1 IHc1 c2 IHc2 fs phi|cs fs phi];
+try (
 destruct (desc_dec z c) as [zltc1|nzltc1];
   [left; exists c; simpl; split; tauto|
   right; apply not_desc_child_desc; try assumption;
@@ -334,7 +324,7 @@ destruct (desc_dec z c) as [zltc1|nzltc1];
   + apply False_rec.
     apply clos_trans_tn1 in zltx.
     inversion zltx; subst; simpl in *; contradiction.
-  + assert( tjump_scanner : ~ z </ c -> z <> c -> z </ tjump (c :: l) fs -> z </ (tjump l fs)).
+  + assert( tjump_scanner : ~ z </ c -> z <> c -> z </ tjump (c :: l) fs phi -> z </ (tjump l fs phi)).
   { 
     intros nzltc Hneq zltcs. apply clos_trans_tn1 in zltcs. inversion zltcs; subst.
   - simpl in H. destruct H as [Hcz | Hin].
@@ -358,8 +348,6 @@ destruct (desc_dec z c) as [zltc1|nzltc1];
       -- simpl in Hychild. simpl. right. exact Hychild.
       -- exact Hylt.
     ++ right. simpl in Hzchild. simpl. right. exact Hzchild.
-- apply False_rec. apply clos_trans_tn1 in zltx.
-  inversion zltx; contradiction.
 Defined.
 
 Lemma desc_desceq_child [x z] : z </ x -> exists y, is_child y x /\ z <=/ y.
@@ -369,18 +357,10 @@ intro zltx. apply clos_trans_tn1 in zltx. inversion zltx.
 - apply clos_tn1_trans in H0. exists y. split; [assumption | now left].
 Qed.
 
-Lemma tloop_no_desc : forall x, t_isloop x -> forall z, ~ z </ x.
+
+Lemma tjump_desc_child : forall x cs fseqt phi, (exists y, In y cs /\ x <=/ y) -> x </ (tjump cs fseqt phi).
 Proof.
-intros x lpx z zltx. destruct x as [| | | | |fs]; try contradiction.
-apply clos_trans_tn1 in zltx. inversion zltx; contradiction.
-Qed.
-
-
-
-
-Lemma tjump_desc_child : forall x cs fseqt, (exists y, In y cs /\ x <=/ y) -> x </ (tjump cs fseqt).
-Proof.
-  intros x cs fseqt. induction cs as [|c cs IH].
+  intros x cs fseqt phi. induction cs as [|c cs IH].
   - intros H. destruct H as [y [Hin Hleq]]. contradiction.
   - intros IH'. destruct IH' as [y [Hin Hleq]].
     + destruct Hleq as [xley |xeqy].
@@ -397,14 +377,14 @@ Lemma child_size_lt :
   forall x y, is_child x y -> tree_size x < tree_size y.
 Proof.
   intros x y H.
-  destruct y as [ | | | |cs fs | ];
+  destruct y as [ | | | |cs fs phi];
   try (inversion H; subst; simpl; lia).
   simpl in H.
   induction cs as [|c l IHl].
   - contradiction.
   - destruct H as [xeqc|xinl].
     simpl. rewrite xeqc. lia.
-    assert (size_list_lt: tree_size (tjump l fs) <=  tree_size (tjump (c :: l) fs) ).
+    assert (size_list_lt: tree_size (tjump l fs phi) <=  tree_size (tjump (c :: l) fs phi) ).
     simpl. lia.
     pose proof (IHl xinl) as Hlt.
     lia.
@@ -421,10 +401,10 @@ Proof.
 Qed.
 
 Lemma no_desc_tjump_nil :
-  forall x fs, ~ x </ tjump [] fs.
+  forall x fs phi, ~ x </ tjump [] fs phi.
 Proof.
-  intros x fs H.
-  remember (tjump [] fs) as t eqn:Ht.
+  intros x fs phi H.
+  remember (tjump [] fs phi) as t eqn:Ht.
   induction H.
   - subst.
     contradict H.
@@ -458,16 +438,15 @@ Fixpoint all_nodes (x : ptree) : list (ptree) :=
   x ::
   match x with
   | talpha c _ _   => all_nodes c
-  | tbeta1 c _ _   => all_nodes c
-  | tbeta2 c _ _   => all_nodes c
-  | talt c1 c2 _ _ => all_nodes c1 ++ all_nodes c2
-  | tjump cs _       =>
+  | tbeta1 c _ _ _ => all_nodes c
+  | tbeta2 c _ _ _ => all_nodes c
+  | talt c1 c2 _ _ _ => all_nodes c1 ++ all_nodes c2
+  | tjump cs _ _       =>
         ((fix all_nodes_jump (cs : list ptree) : list(ptree) :=
             match cs with
             | [] => []
             | c :: cs' => all_nodes c ++ all_nodes_jump cs'
             end) cs)
-  | tloop _        => []
   end.
 
 Lemma all_nodes_self_in : forall x, In x (all_nodes x).
@@ -496,7 +475,7 @@ intros x xley. destruct xley as [xlty|xeqy].
     try ((right; rewrite <- H; assumption) || contradiction).
     destruct H as [H|H]; right; apply in_app_iff; [left|right];
     rewrite <- H; assumption.
-    assert (incl (all_nodes y) (all_nodes(tjump l f))). 
+    assert (incl (all_nodes y) (all_nodes(tjump l f n))). 
     * simpl in *. unfold incl. intros z Hz.
     right. revert H. induction l as [|c l IH]; intros H.
     -- contradiction.
@@ -515,6 +494,33 @@ Inductive tpath : list ptree -> ptree -> ptree -> Prop :=
   | tpath_nil  : forall x, tpath [] x x
   | tpath_cons : forall p x y z, is_child y x ->
       tpath p y z -> tpath (x :: p) x z.
+
+(* [tpath p start endpoint] stores [start] and the intermediate parents in
+   [p].  The endpoint is deliberately separate; for a zero-length path the
+   stored list is empty. *)
+Lemma tpath_nil_iff : forall x y,
+  tpath [] x y <-> x = y.
+Proof.
+  intros x y. split.
+  - intro Hpath. inversion Hpath. reflexivity.
+  - intro Heq. subst y. constructor.
+Qed.
+
+Lemma tpath_start_in : forall p x y,
+  tpath p x y -> p <> [] -> In x p.
+Proof.
+  intros p x y Hpath. induction Hpath.
+  - contradiction.
+  - intro Hnonempty. now left.
+Qed.
+
+Definition tpath_nodes (p : list ptree) (endpoint : ptree) : list ptree :=
+  endpoint :: p.
+
+Lemma tpath_endpoint_in_nodes : forall p x y,
+  tpath p x y -> In y (tpath_nodes p y).
+Proof. intros p x y _. now left. Qed.
+
 Lemma tpath_end_desceq_start : forall x y p, tpath p x y -> y <=/ x.
 Proof.
 intros x y p piep. induction piep.
@@ -523,6 +529,10 @@ intros x y p piep. induction piep.
   + left. right with y; [assumption | now left].
   + rewrite Heq. left. left. assumption.
 Qed.
+
+Lemma tpath_endpoint_desceq : forall p x y,
+  tpath p x y -> y <=/ x.
+Proof. intros p x y Hpath. exact (tpath_end_desceq_start Hpath). Qed.
 
 Lemma in_tpath_desceq : forall x y z p, tpath p x z ->
   In y p -> y <=/ x.
@@ -534,6 +544,41 @@ intros x y z p piep. induction piep.
   + apply IHpiep in Hy. destruct Hy as [Hy|Hy].
     * left. right with y0; [assumption | now left].
     * left. left. rewrite Hy. assumption.
+Qed.
+
+Lemma in_tpath_nodes_desceq : forall p root endpoint z,
+  tpath p root endpoint ->
+  In z (tpath_nodes p endpoint) -> z <=/ root.
+Proof.
+  intros p root endpoint z Hpath Hin.
+  destruct Hin as [Heq | Hin].
+  - subst z. apply tpath_endpoint_desceq with (p := p). exact Hpath.
+  - apply in_tpath_desceq with (z := endpoint) (p := p); assumption.
+Qed.
+
+Definition unmarked_tpath
+  (p : list ptree) (root endpoint : ptree) : Prop :=
+  tpath p root endpoint /\
+  Forall (fun x => t_mrk x = false) (tpath_nodes p endpoint).
+
+Lemma unmarked_tpath_endpoint_unmarked : forall p root endpoint,
+  unmarked_tpath p root endpoint -> t_mrk endpoint = false.
+Proof.
+  intros p root endpoint [_ Hall].
+  inversion Hall. assumption.
+Qed.
+
+Lemma unmarked_tpath_start_unmarked : forall p root endpoint,
+  unmarked_tpath p root endpoint -> t_mrk root = false.
+Proof.
+  intros p root endpoint [Hpath Hall].
+  rewrite Forall_forall in Hall. apply Hall.
+  unfold tpath_nodes.
+  destruct p as [|a p].
+  - apply tpath_nil_iff in Hpath. subst endpoint.
+    now left.
+  - right. apply tpath_start_in with (y := endpoint);
+      [exact Hpath | discriminate].
 Qed.
 
 Lemma cut_tpath [p x z] : tpath p x z -> forall y, In y p ->

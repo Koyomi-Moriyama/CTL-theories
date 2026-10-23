@@ -17,7 +17,7 @@ Require Import Lia.
 
 Set Implicit Arguments.
 
-
+Print rdoseqt.
 
 
 (* Requires XM (sat_alpha_child) *)
@@ -233,6 +233,7 @@ destruct (t_uev x) as [|phi l].
   + left. split; [discriminate|tauto].
   + right. now right.
 Defined.
+
 
 
 (* Requires XM *)

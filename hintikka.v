@@ -5,7 +5,7 @@ Require Import semantics.
 Require Import seqt.
 Require Import ptree.
 Require Import proper.
-Require Import unravel.
+(*Require Import unravel.*)
 
 Require Import Arith.
 Require Import Nat.
@@ -22,10 +22,8 @@ Require Import Psatz.
 Set Implicit Arguments.
 
 
-Definition builder (L : nat -> list nnf) : kripke :=
-{|world := list nnf;
-  kseq  := L;
-  val   := fun w p => In (var p) w|}.
+Definition builder (L :ltree) : Kripke :=
+  {}.
 
 Record pre_hintikka (hl : list nnf) : Prop :=
 { htk_no_contra : forall n, In (var n) hl -> ~ In (neg n) hl;

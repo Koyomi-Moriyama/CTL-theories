@@ -37,8 +37,8 @@ set (x := talpha c xfs phi).
 
 assert (filler x) as fulx.
 { intros z n zltx Hn.
-assert (t_d x = t_d c) as dxeqdc.
-{ unfold t_d. rewrite Heqsec. simpl. unfold t_dose. simpl. reflexivity. }
+assert (length (t_H x) = length (t_H c)) as dxeqdc.
+{ unfold t_H. rewrite Heqsec. simpl. unfold t_dose. simpl. reflexivity. }
 destruct (desc_child_or_child_dec zltx) as [dch|ch].
 - destruct dch as [y [ychx zlty]]. simpl in ychx. rewrite ychx in zlty.
   rename zlty into zltc. clear y ychx. 

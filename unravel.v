@@ -64,6 +64,7 @@ Definition blocked_target
   l_looper Tl Hx Hb.
 
 
+(*
 Record psgu (prev curr : uconfig) : Prop :=
 {
   sgu_trail_eq :
@@ -94,6 +95,7 @@ Record psgu (prev curr : uconfig) : Prop :=
           (u_node prev)
           c1 c2
 }.
+*)
 
 
 Record unode : Type :=
@@ -101,6 +103,7 @@ Record unode : Type :=
   u_curr : uconfig
 }.
 
+(*
 Lemma blocked_candidate_dec :
   forall x c,
     {blocked_candidate x c} +
@@ -108,6 +111,61 @@ Lemma blocked_candidate_dec :
 Proof.
   intros x c.
 Admitted.
+*)
+
+(* 10.14edit *)
+(*
+Lemma blocked_candidate_dec :
+  forall x c,
+    {blocked_candidate x c} +
+    {~ blocked_candidate x c}.
+Proof.
+  intros x c.
+  destruct x as [x fs xi|x bt fs xi|x bt fs xi|x1 x2 bt fs xi|cs fs xi].
+  - right. intro H. destruct H as [H _]. simpl in H. contradiction.
+  - right. intro H. destruct H as [H _]. simpl in H. contradiction.
+  - right. intro H. destruct H as [H _]. simpl in H. contradiction.
+  - right. intro H. destruct H as [H _]. simpl in H. contradiction.
+  - destruct (in_dec seqt_eqdec c (temporary_jump_child (t_dose (tjump cs fs xi))))
+    as [Hc|Hc].
+    + destruct (get_blocker_G (s_G c) (t_dose (tjump cs fs xi))) as [Hb|Hnb].
+      { left. split; [simpl; reflexivity|]. split; [exact Hc|].
+        exists (proj1_sig Hb). exact (proj2_sig Hb). }
+      { right. intro Hblocked. apply Hnb.
+        destruct Hblocked as [_ [_ [h [Hhin Heq]]]].
+        apply InA_alt. exists (fst h).
+        split.
+        - apply eqset_sym. exact Heq.
+        - apply in_map. exact Hhin. }
+    + right. intro Hblocked. apply Hc. exact (proj1 (proj2 Hblocked)).
+Qed.
+*)
+
+(* 10.14edit *)
+Lemma blocked_candidate_dec :
+  forall x c,
+    {blocked_candidate x c} +
+    {~ blocked_candidate x c}.
+Proof.
+  intros x c.
+  destruct x as [x fs xi|x bt fs xi|x bt fs xi|x1 x2 bt fs xi|cs fs xi].
+  - right. intro H. destruct H as [H _]. simpl in H. contradiction.
+  - right. intro H. destruct H as [H _]. simpl in H. contradiction.
+  - right. intro H. destruct H as [H _]. simpl in H. contradiction.
+  - right. intro H. destruct H as [H _]. simpl in H. contradiction.
+  - destruct (in_dec seqt_eqdec c (temporary_jump_child (t_dose (tjump cs fs xi))))
+    as [Hc|Hc].
+    + destruct (get_blocker_G (s_G c) (t_dose (tjump cs fs xi))) as [Hb|Hnb].
+      { left. split; [simpl; reflexivity|]. split; [exact Hc|].
+        exists (proj1_sig Hb). exact (proj2_sig Hb). }
+      { right. intro Hblocked. apply Hnb.
+        destruct Hblocked as [_ [_ [h [Hhin Heq]]]].
+        apply InA_alt. exists (fst h).
+        split.
+        - apply eqset_sym. exact Heq.
+        - apply in_map. exact Hhin. }
+    + right. intro Hblocked. apply Hc. exact (proj1 (proj2 Hblocked)).
+Defined.
 
 Definition virtual_target_of
   (x : ptree)
@@ -132,6 +190,31 @@ Proof.
     as [y Hy].
   simpl.
   exact Hy.
+Qed.
+
+Definition virtual_target_opt
+  (x : ptree)
+  (Hx : x <=/ l_root Tl)
+  (c : doseqt) : option ptree :=
+  match blocked_candidate_dec x c with
+  | left Hb =>
+      Some (virtual_target_of (x := x) (c := c) Hx Hb)
+  | right _ => None
+  end.
+
+Lemma virtual_target_opt_sound :
+  forall (x : ptree) (Hx : x <=/ l_root Tl) (c : doseqt) (y : ptree),
+    virtual_target_opt (x := x) Hx c = Some y ->
+    blocked_candidate x c /\
+    loop_target x c y (l_root Tl).
+Proof.
+  intros x Hx c y Hopt.
+  unfold virtual_target_opt in Hopt.
+  destruct (blocked_candidate_dec x c) as [Hb|Hnb].
+  - split; [exact Hb|].
+    injection Hopt. intro Heq. rewrite <- Heq.
+    apply virtual_target_of_spec.
+  - discriminate.
 Qed.
 
 Fixpoint virtual_targets_aux
@@ -164,6 +247,98 @@ Definition virtual_targets
     Hx
     (temporary_jump_child (t_dose x)).
 
+Definition virtual_step
+  (x : ptree)
+  (Hx : x <=/ l_root Tl)
+  (y : ptree) : Prop :=
+  exists c,
+    In c (temporary_jump_child (t_dose x)) /\
+    virtual_target_opt (x := x) Hx c = Some y.
+
+Lemma virtual_target_opt_blocked :
+  forall (x : ptree) (Hx : x <=/ l_root Tl) (c : doseqt)
+    (Hb : blocked_candidate x c),
+    virtual_target_opt (x := x) Hx c =
+    Some (virtual_target_of (x := x) (c := c) Hx Hb).
+Proof.
+  intros x Hx c Hb. unfold virtual_target_opt.
+  destruct (blocked_candidate_dec x c) as [Hb'|Hnb].
+  - assert (E : Hb' = Hb) by apply proof_irrelevance.
+    rewrite E. reflexivity.
+  - contradiction.
+Qed.
+
+Lemma virtual_target_opt_unblocked :
+  forall (x : ptree) (Hx : x <=/ l_root Tl) (c : doseqt),
+    ~ blocked_candidate x c ->
+    virtual_target_opt (x := x) Hx c = None.
+Proof.
+  intros x Hx c Hnb. unfold virtual_target_opt.
+  destruct (blocked_candidate_dec x c) as [Hb|Hnb']; [contradiction|reflexivity].
+Qed.
+
+Lemma virtual_targets_aux_spec :
+  forall (x : ptree) (Hx : x <=/ l_root Tl) (cs : list doseqt) (y : ptree),
+    In y (virtual_targets_aux (x := x) Hx cs) <->
+    exists c, In c cs /\
+      virtual_target_opt (x := x) Hx c = Some y.
+Proof.
+  intros x Hx cs. induction cs as [|c cs IH]; intros y.
+  - simpl. split.
+    + intro H. contradiction.
+    + intro H. destruct H as [c [H _]]. contradiction.
+  - simpl. destruct (blocked_candidate_dec x c) as [Hb|Hnb].
+    + simpl. rewrite IH. split.
+      * intros [Heq|Hin].
+        -- exists c. split; [left; reflexivity|].
+           subst y. apply virtual_target_opt_blocked.
+        -- destruct Hin as [c' [Hinc' Hopt]].
+           exists c'. split; [right; exact Hinc'|exact Hopt].
+      * intros [c' [Hinc Hopt]]. destruct Hinc as [Heq|Hinc].
+        -- subst c'. left. rewrite (virtual_target_opt_blocked (x := x) (c := c) Hx Hb) in Hopt.
+           injection Hopt. intro E. exact E.
+        -- right. exists c'. split; assumption.
+    + simpl. rewrite IH. split.
+      * intros [c' [Hinc Hopt]]. exists c'. split; [right; exact Hinc|exact Hopt].
+      * intros [c' [Hinc Hopt]]. destruct Hinc as [Heq|Hinc].
+        -- subst c'. rewrite (virtual_target_opt_unblocked (x := x) (c := c) Hx Hnb) in Hopt. discriminate.
+        -- exists c'. split; assumption.
+Qed.
+
+Lemma virtual_targets_spec :
+  forall (x : ptree) (Hx : x <=/ l_root Tl) (y : ptree),
+    In y (virtual_targets (x := x) Hx) <->
+    virtual_step (x := x) Hx y.
+Proof.
+  intros x Hx y. unfold virtual_targets, virtual_step.
+  apply virtual_targets_aux_spec.
+Qed.
+
+(* 10.14edit *)
+Record psgu (prev curr : uconfig) : Prop :=
+{
+  sgu_trail_eq :
+    u_trail curr = u_trail prev ++ [u_node prev];
+
+  sgu_nonjump :
+    ~ t_isjump (u_node prev) ->
+    is_child (u_node curr) (u_node prev);
+
+  sgu_jump :
+    t_isjump (u_node prev) ->
+    is_child (u_node curr) (u_node prev) \/
+    virtual_step (x := u_node prev) (u_in_root prev) (u_node curr);
+
+  sgu_alt_choice :
+    forall c1 c2 bt fs phi,
+      u_node prev = talt c1 c2 bt fs phi ->
+      u_node curr =
+        alternate_choice
+          (u_trail prev)
+          (u_node prev)
+          c1 c2
+}.
+
 Definition jump_next_nodes
   (x : ptree)
   (Hx : x <=/ l_root Tl)
@@ -177,6 +352,7 @@ Definition jump_next_nodes
   end.
 
 
+(* 
 Lemma jump_next_nodes_spec :
   forall x Hx y,
     t_isjump x ->
@@ -185,6 +361,319 @@ Lemma jump_next_nodes_spec :
       exists c,
         blocked_candidate x c /\
         loop_target x c y (l_root Tl).
+*)
+
+(* 10.14edit *)
+Lemma jump_next_nodes_spec :
+  forall (x : ptree) (Hx : x <=/ l_root Tl) (y : ptree),
+    t_isjump x ->
+    In y (jump_next_nodes (x := x) Hx) <->
+      is_child y x \/ virtual_step (x := x) Hx y.
+Proof.
+  intros x Hx y Hjump.
+  destruct x as [c fs xi|c bt fs xi|c bt fs xi|c1 c2 bt fs xi|cs fs xi];
+    simpl in Hjump; try contradiction.
+  simpl.
+  rewrite nodup_In.
+  rewrite in_app_iff.
+  rewrite virtual_targets_spec.
+  tauto.
+Qed.
+
+Corollary jump_next_nodes_sound :
+  forall (x : ptree) (Hx : x <=/ l_root Tl) (y : ptree),
+    t_isjump x ->
+    In y (jump_next_nodes (x := x) Hx) ->
+    is_child y x \/
+    exists c,
+      blocked_candidate x c /\
+      loop_target x c y (l_root Tl).
+Proof.
+  intros x Hx y Hjump Hin.
+  apply (proj1 (jump_next_nodes_spec (x := x) Hx y Hjump)) in Hin.
+  destruct Hin as [Hchild|Hvirtual].
+  - left. exact Hchild.
+  - right. destruct Hvirtual as [c [Hc Hopt]].
+    exists c. exact (virtual_target_opt_sound (x := x) Hx c Hopt).
+Qed.
+
+Definition next_nodes
+  (u : uconfig) : list ptree :=
+  match u_node u with
+  | talpha c _ _ => [c]
+  | tbeta1 c _ _ _ => [c]
+  | tbeta2 c _ _ _ => [c]
+  | talt c1 c2 _ _ _ =>
+      [alternate_choice (u_trail u) (u_node u) c1 c2]
+  | tjump _ _ _ => jump_next_nodes (u_in_root u)
+  end.
+
+Lemma next_node_in_root :
+  forall (u : uconfig) (y : ptree),
+    In y (next_nodes u) -> y <=/ l_root Tl.
+Proof.
+  intros [trail x Hx] y Hin.
+  destruct x as [c fs xi|c bt fs xi|c bt fs xi|c1 c2 bt fs xi|cs fs xi].
+  - simpl in Hin.
+    destruct Hin as [Hin|Hin]; [|contradiction].
+    apply child_desceq with (y := talpha c fs xi).
+    + simpl. exact (eq_sym Hin).
+    + exact Hx.
+  - simpl in Hin.
+    destruct Hin as [Hin|Hin]; [|contradiction].
+    apply child_desceq with (y := tbeta1 c bt fs xi).
+    + simpl. exact (eq_sym Hin).
+    + exact Hx.
+  - simpl in Hin.
+    destruct Hin as [Hin|Hin]; [|contradiction].
+    apply child_desceq with (y := tbeta2 c bt fs xi).
+    + simpl. exact (eq_sym Hin).
+    + exact Hx.
+  - simpl in Hin.
+    destruct Hin as [Hin|Hin]; [|contradiction].
+    rewrite <- Hin.
+    destruct (alternate_choice_or trail (talt c1 c2 bt fs xi) c1 c2)
+      as [Hchoice|Hchoice]; rewrite Hchoice.
+    + apply child_desceq with (y := talt c1 c2 bt fs xi).
+      * simpl. left. reflexivity.
+      * exact Hx.
+    + apply child_desceq with (y := talt c1 c2 bt fs xi).
+      * simpl. right. reflexivity.
+      * exact Hx.
+  - simpl in Hin.
+    apply (proj1 (jump_next_nodes_spec (x := tjump cs fs xi)
+      Hx y (ltac:(simpl; trivial)))) in Hin.
+    destruct Hin as [Hchild|Hvirtual].
+    + apply (child_desceq y (y := tjump cs fs xi) (z := l_root Tl)).
+      * exact Hchild.
+      * exact Hx.
+    + destruct Hvirtual as [c0 [Hc0 Hopt]].
+      pose proof (virtual_target_opt_sound (x := tjump cs fs xi) Hx c0 Hopt)
+        as [_ Hloop].
+      destruct Hloop as [h [_ [_ [_ [Hyle _]]]]].
+      exact Hyle.
+Qed.
+
+Lemma next_nodes_nodup :
+  forall u,
+    NoDup (next_nodes u).
+Proof.
+  intros [trail x Hx].
+  destruct x.
+  - simpl. constructor; [intros H; contradiction|constructor].
+  - simpl. constructor; [intros H; contradiction|constructor].
+  - simpl. constructor; [intros H; contradiction|constructor].
+  - simpl. constructor; [intros H; contradiction|constructor].
+  - simpl. apply NoDup_nodup.
+Qed.
+
+Lemma uconfig_ext :
+  forall u v,
+    u_trail u = u_trail v ->
+    u_node u = u_node v ->
+    u = v.
+Proof.
+  intros [trail1 node1 root1] [trail2 node2 root2] Htrail Hnode.
+  simpl in Htrail, Hnode. subst trail2. subst node2.
+  f_equal. apply proof_irrelevance.
+Qed.
+
+Fixpoint map_in
+  {A B : Type}
+  (l : list A)
+  (f : forall x, In x l -> B)
+  : list B :=
+  match l as l0 return (forall x, In x l0 -> B) -> list B with
+  | [] => fun _ => []
+  | x :: xs => fun f0 =>
+      f0 x (or_introl eq_refl) ::
+      map_in xs (fun y Hy => f0 y (or_intror Hy))
+  end f.
+
+Lemma map_in_In_iff :
+  forall (A B : Type) (l : list A)
+    (f : forall x, In x l -> B) (z : B),
+    In z (map_in l f) <->
+    exists x (Hx : In x l), z = f x Hx.
+Proof.
+  intros A B l. induction l as [|x xs IH]; intros f z.
+  - simpl. split.
+    + contradiction.
+    + intros [x [Hx _]]. contradiction.
+  - simpl. split.
+    + intros [Heq|Hin].
+      * exists x, (or_introl eq_refl). exact (eq_sym Heq).
+      * destruct (IH (fun y Hy => f y (or_intror Hy)) z) as [H _].
+        destruct (H Hin) as [y [Hy Heq]].
+        exists y, (or_intror Hy). exact Heq.
+    + intros [y [Hy Heq]]. destruct Hy as [Heqxy|Hy].
+      * subst y. left.
+        exact (eq_sym Heq).
+      * right. apply (proj2 (IH (fun y Hy => f y (or_intror Hy)) z)).
+        exists y, Hy. exact Heq.
+Qed.
+
+Definition futr_list
+  (u : uconfig) : list uconfig :=
+  map_in
+    (next_nodes u)
+    (fun y Hy =>
+      {| u_trail := u_trail u ++ [u_node u];
+         u_node := y;
+         u_in_root := next_node_in_root u y Hy |}).
+
+Lemma psgu_iff_next_nodes :
+  forall prev curr,
+    psgu prev curr <->
+    u_trail curr = u_trail prev ++ [u_node prev] /\
+    In (u_node curr) (next_nodes prev).
+Proof.
+  intros prev curr. destruct prev as [trail x Hx].
+  destruct curr as [trail' y Hy].
+  destruct x as [c fs xi|c bt fs xi|c bt fs xi|c1 c2 bt fs xi|cs fs xi].
+  - split.
+    + intro H. destruct H as [Ht Hn Hj Ha]. split; [exact Ht|].
+      simpl. specialize (Hn (fun H => H)).
+      simpl in Hn. now left.
+    + intros [Ht Hin]. constructor; simpl in *.
+      * exact Ht.
+      * intro Hdummy. simpl in Hin. destruct Hin as [Hin|Hin].
+        -- exact (eq_sym Hin).
+        -- contradiction.
+      * intro H. contradiction.
+      * intros c1' c2' bt' fs' phi' Heq. inversion Heq.
+  - split.
+    + intro H. destruct H as [Ht Hn Hj Ha]. split; [exact Ht|].
+      simpl. specialize (Hn (fun H => H)). simpl in Hn. now left.
+    + intros [Ht Hin]. constructor; simpl in *.
+      * exact Ht.
+      * intro Hdummy. simpl in Hin. destruct Hin as [Hin|Hin].
+        -- exact (eq_sym Hin).
+        -- contradiction.
+      * intro H. contradiction.
+      * intros c1' c2' bt' fs' phi' Heq. inversion Heq.
+  - split.
+    + intro H. destruct H as [Ht Hn Hj Ha]. split; [exact Ht|].
+      simpl. specialize (Hn (fun H => H)). simpl in Hn. now left.
+    + intros [Ht Hin]. constructor; simpl in *.
+      * exact Ht.
+      * intro Hdummy. simpl in Hin. destruct Hin as [Hin|Hin].
+        -- exact (eq_sym Hin).
+        -- contradiction.
+      * intro H. contradiction.
+      * intros c1' c2' bt' fs' phi' Heq. inversion Heq.
+  - split.
+    + intro H. destruct H as [Ht Hn Hj Ha]. split; [exact Ht|].
+      simpl. specialize (Ha c1 c2 bt fs xi eq_refl).
+      left. exact (eq_sym Ha).
+    + intros [Ht Hin]. constructor; simpl in *.
+      * exact Ht.
+      * intro Hdummy. destruct Hin as [Hin|Hin].
+        -- unfold is_child. simpl. rewrite <- Hin.
+           exact (alternate_choice_or trail (talt c1 c2 bt fs xi) c1 c2).
+        -- contradiction.
+      * intro H. contradiction.
+      * intros c1' c2' bt' fs' phi' Heq. inversion Heq.
+        subst c1'; subst c2'; subst bt'; subst fs'; subst phi'.
+        destruct Hin as [Hin|Hin]; [exact (eq_sym Hin)|contradiction].
+  - split.
+    + intro H. destruct H as [Ht Hn Hj Ha]. split; [exact Ht|].
+      change (In y (jump_next_nodes (x := tjump cs fs xi) Hx)).
+      apply (proj2 (jump_next_nodes_spec (x := tjump cs fs xi)
+        Hx y (ltac:(simpl; trivial)))).
+      apply Hj. simpl. trivial.
+    + intros [Ht Hin]. constructor; simpl in *.
+      * exact Ht.
+      * intro H. contradiction.
+      * intro H. change (In y (jump_next_nodes (x := tjump cs fs xi) Hx)) in Hin.
+        apply (proj1 (jump_next_nodes_spec (x := tjump cs fs xi)
+          Hx y (ltac:(simpl; trivial)))). exact Hin.
+      * intros c1' c2' bt' fs' phi' Heq. inversion Heq.
+Qed.
+
+Lemma futr_list_in_iff :
+  forall u v,
+    In v (futr_list u) <->
+    u_trail v = u_trail u ++ [u_node u] /\
+    In (u_node v) (next_nodes u).
+Proof.
+  intros u v. unfold futr_list.
+  rewrite (map_in_In_iff (next_nodes u)
+    (fun y Hy =>
+      {| u_trail := u_trail u ++ [u_node u];
+         u_node := y;
+         u_in_root := next_node_in_root u y Hy |}) v).
+  split.
+  - intros [y [Hy Heq]]. subst v. simpl. split; [reflexivity|exact Hy].
+  - intros [Htrail Hnode].
+    assert (Hv : v =
+      {| u_trail := u_trail u ++ [u_node u];
+         u_node := u_node v;
+         u_in_root := next_node_in_root u (u_node v) Hnode |}).
+    { apply uconfig_ext; simpl; [exact Htrail|reflexivity]. }
+    exists (u_node v), Hnode. exact Hv.
+Qed.
+
+Lemma futr_list_spec :
+  forall u v,
+    In v (futr_list u) <-> psgu u v.
+Proof.
+  intros u v. rewrite futr_list_in_iff. exact (iff_sym (psgu_iff_next_nodes u v)).
+Qed.
+
+Lemma futr_list_nodup :
+  forall u,
+    NoDup (futr_list u).
+Proof.
+  intros u.
+  assert (Hmap : forall (l : list ptree)
+    (f : forall x, In x l -> uconfig),
+    NoDup l ->
+    (forall x Hx y Hy, f x Hx = f y Hy -> x = y) ->
+    NoDup (map_in l f)).
+  {
+    intros l. induction l as [|x xs IH]; intros f Hnodup Hinj.
+    - constructor.
+    - simpl in Hnodup. inversion Hnodup as [| x0 xs0 Hnotin Hrest].
+      constructor.
+      + intro Htail. apply Hnotin. 
+        destruct (proj1 (map_in_In_iff xs
+          (fun y Hy => f y (or_intror Hy)) (f x (or_introl eq_refl))) Htail)
+          as [y [Hy Heq]].
+        apply Hinj in Heq. rewrite Heq. exact Hy.
+      + apply IH; [exact Hrest|].
+        intros x' Hx' y Hy' Heq. apply Hinj in Heq. exact Heq.
+  }
+  apply Hmap with (l := next_nodes u)
+    (f := fun y Hy =>
+      {| u_trail := u_trail u ++ [u_node u];
+         u_node := y;
+         u_in_root := next_node_in_root u y Hy |}).
+  - apply next_nodes_nodup.
+  - intros x Hx y Hy Heq. simpl in Heq. now inversion Heq.
+Qed.
+
+Definition futr_property
+  (u : uconfig)
+  (lfutr : list uconfig) : Prop :=
+  NoDup lfutr /\
+  forall v, In v lfutr <-> psgu u v.
+
+Definition curr_lfutr
+  (u : uconfig) : { lfutr : list uconfig | futr_property u lfutr }.
+Proof.
+  refine (exist _ (futr_list u) _).
+  split.
+  - apply futr_list_nodup.
+  - apply futr_list_spec.
+Defined.
+
+Lemma curr_lfutr_value :
+  forall u,
+    proj1_sig (curr_lfutr u) = futr_list u.
+Proof.
+  intro u. reflexivity.
+Qed.
 
 (* old ctl
 
@@ -420,9 +909,12 @@ Qed.
 
   *)
 
+(* 10.14edit *)
+(*
   Theorem unravel_ev_fulfilled :
     forall i phi psi u, In (unt phi psi) (t_G (snd (prev u))) ->
     exists v, k >= i /\ In psi (t_G (unravel k)).
+*)
 
 (*
   Record psgu (prev curr : (list ptree) * ptree) : Prop :=
@@ -434,6 +926,8 @@ Qed.
     sgu_alt_choice : forall c1 c2 fs phi, snd prev = talt c1 c2 fs phi ->
       snd curr = alternate_choice (fst prev) (snd prev) c1 c2 }.
 *)
+(* 10.14edit *)
+(*
   Definition return_succ_gen_unravel (prev : list ptree * ptree) :=
     {lu :list( (list ptree) * ptree) |forall u, In u lu <-> snd u <=/ l_root Tl /\ psgu prev u}.
   
@@ -1194,5 +1688,6 @@ Qed.
   - fold (In (unt phi psi) []). rewrite <- H0. tauto.
   - lia.
   Qed.
+*)
 
 End Unravelling.

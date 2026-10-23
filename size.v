@@ -123,9 +123,9 @@ intros Hphi Hin. simpl in Hin. constructor 2.
 pose proof (size_remove_add_le_size_sum Hin) as H.
 destruct phi; try contradiction; simpl; simpl in H; lia.
 Qed.
-
+(*
 Theorem jump_child_branch_decr_size {ss : rdoseqt} (sc : state_conditions (`ss))
- (nb : not_blocked_seqt (`ss)) (parent_not_in_H : ~ InA (@eqset nnf) (s_G (`ss)) (s_H (`ss))) :
+:
   forall br, In br (jump_child (`ss)) -> MR lexnat2 seqt_size br (`ss).
 Proof.
 constructor 1. simpl.
@@ -252,4 +252,131 @@ pose proof
 
 simpl in Hbound.
 lia.
+Qed.
+*)
+
+Lemma D_rule_red_size :
+  forall s,
+    red_size_list (s_G (D_rule s)) =
+    red_size_list (s_G s).
+Proof.
+  intros s.
+  unfold D_rule.
+  destruct (unenext (s_G s)) as [| phi L] eqn:Hun.
+   - reflexivity.
+   - simpl.
+    reflexivity.
+Qed.
+
+Theorem D_rule_size : forall s,
+ seqt_size (D_rule s) = seqt_size s.
+Proof.
+  intros s.
+  unfold seqt_size.
+  f_equal.
+Qed.
+
+Theorem jump_child_branch_decr_size
+  {ss : rdoseqt} :
+  forall br,
+    In br (jump_child (`ss)) ->
+    MR lexnat2 seqt_size br (`ss).
+Proof.
+  intros br Hbr.
+  constructor 1.
+  simpl.
+  pose proof
+    (jump_child_regular ss)
+    as Hchildren_regular.
+
+  rewrite Forall_forall in Hchildren_regular.
+
+  pose proof
+    (Hchildren_regular br Hbr)
+    as Hbr_reg.
+
+  destruct ss as [ss rs].
+  pose proof
+    (jump_child_in_temporary_and_nodup_H rs br Hbr)
+    as Htemporary.
+  destruct Htemporary as [Htemporary Hnodup].
+  assert
+  (Hshape :
+     s_R br = s_R ss /\
+     s_H br =
+       (s_G br, S (length (s_H ss))) :: s_H ss).
+{
+  split.
+  - apply temporary_jump_child_R with (parent := ss) (child := br).
+    exact Htemporary.
+  - apply temporary_jump_child_history_shape with (parent := ss) (child := br).
+    exact Htemporary.
+}
+destruct Hbr_reg as [NDbr Gincbr Hincbr].
+destruct Hshape as [HR HH].
+rewrite HR in Gincbr.
+rewrite HH in NDbr.
+simpl in NDbr.
+rewrite HH in Hincbr.
+rewrite HR in Hincbr.
+simpl in Hincbr.
+assert
+  (HincA :
+     inclA
+       (@eqset nnf)
+       (s_G br :: map fst (s_H ss))
+       (power_set (cl_list (s_R ss)))).
+{
+  unfold inclA.
+  intros G HG.
+  apply InA_alt in HG.
+  destruct HG as [G' [Heq Hin]].
+  destruct Heq as [Hin_G_G' Hin_G'_G].
+  simpl in Hin.
+  destruct Hin as [HG' | HG'].
+  - subst G'.
+    apply incl_inset_power_set.
+    apply nnf_eqdec.
+    (* The newly inserted history entry is the generated child Gamma. *)
+    eapply incl_tran.
+    + exact Hin_G_G'.
+    + exact Gincbr.
+  - apply in_map_iff in HG'.
+    destruct HG' as [[G0 n] [HG' HinH]].
+    simpl in HG'.
+    subst G'.
+    apply incl_inset_power_set.
+    apply nnf_eqdec.
+    eapply incl_tran.
+    + exact Hin_G_G'.
+    + specialize (Hincbr (G0, n) (or_intror HinH)).
+      simpl in Hincbr.
+      exact Hincbr.
+  }
+pose proof
+  (@NoDupA_set_incl_length
+     nnf
+     nnf_eqdec
+     (s_G br :: map fst (s_H ss))
+     (power_set (cl_list (s_R ss)))
+     NDbr
+     HincA)
+  as Hbound.
+rewrite HR.
+rewrite HH.
+simpl.
+simpl in Hbound.
+rewrite map_length in Hbound.
+lia.
+Qed.
+
+(* The decrease argument depends only on regularity and on the fact that the
+   current state has not already occurred in its history.  It applies to
+   every member of the jump list, including lists of arbitrary length. *)
+Corollary jump_children_decr_size (ss : rdoseqt) :
+  Forall (fun child => MR lexnat2 seqt_size child (`ss))
+         (jump_child (`ss)).
+Proof.
+  apply Forall_forall. intros child Hin.
+  apply jump_child_branch_decr_size. exact Hin.
 Qed.

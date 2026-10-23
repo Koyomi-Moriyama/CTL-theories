@@ -1,4 +1,4 @@
-DIGEST 4f1fd48c64de1d210b81773f19a9d3bc
+DIGEST cfd6cad9bd9acd66627470171fa5c5f9
 FLTLTab.semantics
 R15:19 LTLTab.utils <> <> lib
 R37:39 LTLTab.nnf <> <> lib
@@ -1063,170 +1063,194 @@ R23812:23813 LTLTab.semantics <> w':129 var
 R23810:23810 LTLTab.semantics <> SemanticsMore.M var
 R23863:23881 LTLTab.seqt <> in_unanext_in_anext thm
 R23863:23881 LTLTab.seqt <> in_unanext_in_anext thm
-prf 24027:24040 <> sat_jump_child
-binder 24054:24054 <> w:130
-binder 24056:24056 <> s:131
-binder 24058:24062 <> child:132
-R24083:24086 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R24066:24080 LTLTab.semantics <> kripke_complete def
-R24082:24082 LTLTab.semantics <> SemanticsMore.M var
-R24102:24109 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R24087:24089 LTLTab.semantics <> sat def
-R24096:24098 LTLTab.seqt <> s_G proj
-R24100:24100 LTLTab.semantics <> s:131 var
-R24093:24093 LTLTab.semantics <> w:130 var
-R24091:24091 LTLTab.semantics <> SemanticsMore.M var
-R24133:24136 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R24110:24111 Coq.Lists.List <> In def
-R24120:24129 LTLTab.seqt <> jump_child def
-R24131:24131 LTLTab.semantics <> s:131 var
-R24113:24117 LTLTab.semantics <> child:132 var
-R24137:24143 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R24145:24146 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 24144:24144 <> v:133
-R24157:24160 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R24147:24150 LTLTab.semantics <> kseq proj
-R24156:24156 LTLTab.semantics <> v:133 var
-R24154:24154 LTLTab.semantics <> w:130 var
-R24152:24152 LTLTab.semantics <> SemanticsMore.M var
-R24161:24163 LTLTab.semantics <> sat def
-R24170:24172 LTLTab.seqt <> s_G proj
-R24174:24178 LTLTab.semantics <> child:132 var
-R24167:24167 LTLTab.semantics <> v:133 var
-R24165:24165 LTLTab.semantics <> SemanticsMore.M var
-R24233:24242 LTLTab.seqt <> jump_child def
-R24267:24273 LTLTab.seqt <> unenext def
-R24276:24278 LTLTab.seqt <> s_G proj
-R24267:24273 LTLTab.seqt <> unenext def
-R24276:24278 LTLTab.seqt <> s_G proj
-R24597:24605 LTLTab.semantics <> sat_anext thm
-R24597:24605 LTLTab.semantics <> sat_anext thm
-R24840:24841 Coq.Lists.List <> In def
-R24848:24854 LTLTab.seqt <> unenext def
-R24857:24859 LTLTab.seqt <> s_G proj
-R24840:24841 Coq.Lists.List <> In def
-R24848:24854 LTLTab.seqt <> unenext def
-R24857:24859 LTLTab.seqt <> s_G proj
-R24935:24943 LTLTab.semantics <> sat_enext thm
-R24960:24962 LTLTab.seqt <> s_G proj
-R24935:24943 LTLTab.semantics <> sat_enext thm
-R24960:24962 LTLTab.seqt <> s_G proj
-R25171:25179 LTLTab.semantics <> sat_anext thm
-R25171:25179 LTLTab.semantics <> sat_anext thm
-R25271:25280 Coq.Lists.List <> in_map_iff thm
-R25271:25280 Coq.Lists.List <> in_map_iff thm
-R25395:25396 Coq.Lists.List <> In def
-R25403:25409 LTLTab.seqt <> unenext def
-R25412:25414 LTLTab.seqt <> s_G proj
-R25395:25396 Coq.Lists.List <> In def
-R25403:25409 LTLTab.seqt <> unenext def
-R25412:25414 LTLTab.seqt <> s_G proj
-R25493:25501 LTLTab.semantics <> sat_enext thm
-R25518:25520 LTLTab.seqt <> s_G proj
-R25493:25501 LTLTab.semantics <> sat_enext thm
-R25518:25520 LTLTab.seqt <> s_G proj
-R25735:25743 LTLTab.semantics <> sat_anext thm
-R25735:25743 LTLTab.semantics <> sat_anext thm
-R25878:25890 LTLTab.semantics SemanticsMore <> sec
-prf 25900:25913 <> satable_subset
-binder 25925:25925 <> G:134
-binder 25927:25928 <> G':135
-R25941:25944 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R25932:25935 Coq.Lists.List <> incl def
-R25940:25940 LTLTab.semantics <> G:134 var
-R25937:25938 LTLTab.semantics <> G':135 var
-R25954:25957 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R25945:25951 LTLTab.semantics <> satable def
-R25953:25953 LTLTab.semantics <> G:134 var
-R25958:25964 LTLTab.semantics <> satable def
-R25966:25967 LTLTab.semantics <> G':135 var
-R26069:26078 LTLTab.semantics <> sat_subset thm
-R26069:26078 LTLTab.semantics <> sat_subset thm
-prf 26161:26177 <> unsat_alpha_child
-binder 26190:26192 <> phi:136
-binder 26194:26194 <> s:137
-R26215:26218 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26200:26210 LTLTab.nnf <> nnf_isalpha def
-R26212:26214 LTLTab.semantics <> phi:136 var
-R26233:26238 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26219:26220 Coq.Lists.List <> In def
-R26227:26229 LTLTab.seqt <> s_G proj
-R26231:26231 LTLTab.semantics <> s:137 var
-R26222:26224 LTLTab.semantics <> phi:136 var
-R26274:26277 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26239:26247 LTLTab.semantics <> unsatable def
-R26250:26252 LTLTab.seqt <> s_G proj
-R26255:26265 LTLTab.seqt <> alpha_child def
-R26271:26271 LTLTab.semantics <> s:137 var
-R26267:26269 LTLTab.semantics <> phi:136 var
-R26278:26286 LTLTab.semantics <> unsatable def
-R26289:26291 LTLTab.seqt <> s_G proj
-R26293:26293 LTLTab.semantics <> s:137 var
-R26386:26400 LTLTab.semantics <> sat_alpha_child thm
-R26386:26400 LTLTab.semantics <> sat_alpha_child thm
-prf 26431:26449 <> unsat_beta_children
-binder 26461:26463 <> phi:138
-binder 26465:26465 <> s:139
-R26485:26488 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26471:26480 LTLTab.nnf <> nnf_isbeta def
-R26482:26484 LTLTab.semantics <> phi:138 var
-R26503:26508 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26489:26490 Coq.Lists.List <> In def
-R26497:26499 LTLTab.seqt <> s_G proj
-R26501:26501 LTLTab.semantics <> s:139 var
-R26492:26494 LTLTab.semantics <> phi:138 var
-R26544:26549 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26509:26517 LTLTab.semantics <> unsatable def
-R26520:26522 LTLTab.seqt <> s_G proj
-R26525:26535 LTLTab.seqt <> beta1_child def
-R26541:26541 LTLTab.semantics <> s:139 var
-R26537:26539 LTLTab.semantics <> phi:138 var
-R26585:26592 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26550:26558 LTLTab.semantics <> unsatable def
-R26561:26563 LTLTab.seqt <> s_G proj
-R26566:26576 LTLTab.seqt <> beta2_child def
-R26582:26582 LTLTab.semantics <> s:139 var
-R26578:26580 LTLTab.semantics <> phi:138 var
-R26593:26601 LTLTab.semantics <> unsatable def
-R26604:26606 LTLTab.seqt <> s_G proj
-R26608:26608 LTLTab.semantics <> s:139 var
-R26669:26685 LTLTab.semantics <> sat_beta_children thm
-R26669:26685 LTLTab.semantics <> sat_beta_children thm
-prf 26797:26819 <> unsat_jump_child_exists
-binder 26832:26832 <> s:140
-R26835:26835 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26898:26906 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R26836:26842 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R26848:26849 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 26843:26847 <> child:141
-R26873:26876 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R26850:26851 Coq.Lists.List <> In def
-R26860:26869 LTLTab.seqt <> jump_child def
-R26871:26871 LTLTab.semantics <> s:140 var
-R26853:26857 LTLTab.semantics <> child:141 var
-R26877:26885 LTLTab.semantics <> unsatable def
-R26888:26890 LTLTab.seqt <> s_G proj
-R26892:26896 LTLTab.semantics <> child:141 var
-R26907:26915 LTLTab.semantics <> unsatable def
-R26918:26920 LTLTab.seqt <> s_G proj
-R26922:26922 LTLTab.semantics <> s:140 var
-R26993:27006 LTLTab.semantics <> sat_jump_child thm
-R26993:27006 LTLTab.semantics <> sat_jump_child thm
-prf 27096:27107 <> unsat_contra
-binder 27119:27119 <> n:142
-binder 27121:27121 <> s:143
-R27167:27172 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R27145:27148 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R27127:27128 Coq.Lists.List <> In def
-R27139:27141 LTLTab.seqt <> s_G proj
-R27143:27143 LTLTab.semantics <> s:143 var
-R27131:27133 LTLTab.nnf <> var constr
-R27135:27135 LTLTab.semantics <> n:142 var
-R27149:27150 Coq.Lists.List <> In def
-R27161:27163 LTLTab.seqt <> s_G proj
-R27165:27165 LTLTab.semantics <> s:143 var
-R27153:27155 LTLTab.nnf <> neg constr
-R27157:27157 LTLTab.semantics <> n:142 var
-R27173:27181 LTLTab.semantics <> unsatable def
-R27184:27186 LTLTab.seqt <> s_G proj
-R27188:27188 LTLTab.semantics <> s:143 var
+prf 23955:23964 <> sat_D_rule
+binder 23976:23976 <> w:130
+binder 23978:23978 <> s:131
+R23999:24002 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R23982:23996 LTLTab.semantics <> kripke_complete def
+R23998:23998 LTLTab.semantics <> SemanticsMore.M var
+R24018:24024 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24003:24005 LTLTab.semantics <> sat def
+R24012:24014 LTLTab.seqt <> s_G proj
+R24016:24016 LTLTab.semantics <> s:131 var
+R24009:24009 LTLTab.semantics <> w:130 var
+R24007:24007 LTLTab.semantics <> SemanticsMore.M var
+R24025:24027 LTLTab.semantics <> sat def
+R24034:24036 LTLTab.seqt <> s_G proj
+R24039:24044 LTLTab.seqt <> D_rule def
+R24046:24046 LTLTab.semantics <> s:131 var
+R24031:24031 LTLTab.semantics <> w:130 var
+R24029:24029 LTLTab.semantics <> SemanticsMore.M var
+prf 24176:24189 <> sat_jump_child
+binder 24203:24203 <> w:132
+binder 24205:24205 <> s:133
+binder 24207:24211 <> child:134
+R24232:24235 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24215:24229 LTLTab.semantics <> kripke_complete def
+R24231:24231 LTLTab.semantics <> SemanticsMore.M var
+R24251:24258 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24236:24238 LTLTab.semantics <> sat def
+R24245:24247 LTLTab.seqt <> s_G proj
+R24249:24249 LTLTab.semantics <> s:133 var
+R24242:24242 LTLTab.semantics <> w:132 var
+R24240:24240 LTLTab.semantics <> SemanticsMore.M var
+R24282:24285 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24259:24260 Coq.Lists.List <> In def
+R24269:24278 LTLTab.seqt <> jump_child def
+R24280:24280 LTLTab.semantics <> s:133 var
+R24262:24266 LTLTab.semantics <> child:134 var
+R24286:24292 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R24294:24295 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 24293:24293 <> v:135
+R24306:24309 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R24296:24299 LTLTab.semantics <> kseq proj
+R24305:24305 LTLTab.semantics <> v:135 var
+R24303:24303 LTLTab.semantics <> w:132 var
+R24301:24301 LTLTab.semantics <> SemanticsMore.M var
+R24310:24312 LTLTab.semantics <> sat def
+R24319:24321 LTLTab.seqt <> s_G proj
+R24323:24327 LTLTab.semantics <> child:134 var
+R24316:24316 LTLTab.semantics <> v:135 var
+R24314:24314 LTLTab.semantics <> SemanticsMore.M var
+R24382:24391 LTLTab.seqt <> jump_child def
+R24416:24422 LTLTab.seqt <> unenext def
+R24425:24427 LTLTab.seqt <> s_G proj
+R24416:24422 LTLTab.seqt <> unenext def
+R24425:24427 LTLTab.seqt <> s_G proj
+R24464:24472 Coq.Lists.List <> filter_In thm
+R24464:24472 Coq.Lists.List <> filter_In thm
+R24555:24574 LTLTab.seqt <> temporary_jump_child def
+R24905:24913 LTLTab.semantics <> sat_anext thm
+R24905:24913 LTLTab.semantics <> sat_anext thm
+R25039:25047 Coq.Lists.List <> filter_In thm
+R25039:25047 Coq.Lists.List <> filter_In thm
+R25130:25149 LTLTab.seqt <> temporary_jump_child def
+R25308:25309 Coq.Lists.List <> In def
+R25316:25322 LTLTab.seqt <> unenext def
+R25325:25327 LTLTab.seqt <> s_G proj
+R25308:25309 Coq.Lists.List <> In def
+R25316:25322 LTLTab.seqt <> unenext def
+R25325:25327 LTLTab.seqt <> s_G proj
+R25403:25411 LTLTab.semantics <> sat_enext thm
+R25428:25430 LTLTab.seqt <> s_G proj
+R25403:25411 LTLTab.semantics <> sat_enext thm
+R25428:25430 LTLTab.seqt <> s_G proj
+R25639:25647 LTLTab.semantics <> sat_anext thm
+R25639:25647 LTLTab.semantics <> sat_anext thm
+R25739:25748 Coq.Lists.List <> in_map_iff thm
+R25739:25748 Coq.Lists.List <> in_map_iff thm
+R25863:25864 Coq.Lists.List <> In def
+R25871:25877 LTLTab.seqt <> unenext def
+R25880:25882 LTLTab.seqt <> s_G proj
+R25863:25864 Coq.Lists.List <> In def
+R25871:25877 LTLTab.seqt <> unenext def
+R25880:25882 LTLTab.seqt <> s_G proj
+R25961:25969 LTLTab.semantics <> sat_enext thm
+R25986:25988 LTLTab.seqt <> s_G proj
+R25961:25969 LTLTab.semantics <> sat_enext thm
+R25986:25988 LTLTab.seqt <> s_G proj
+R26203:26211 LTLTab.semantics <> sat_anext thm
+R26203:26211 LTLTab.semantics <> sat_anext thm
+R26346:26358 LTLTab.semantics SemanticsMore <> sec
+prf 26368:26381 <> satable_subset
+binder 26393:26393 <> G:136
+binder 26395:26396 <> G':137
+R26409:26412 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26400:26403 Coq.Lists.List <> incl def
+R26408:26408 LTLTab.semantics <> G:136 var
+R26405:26406 LTLTab.semantics <> G':137 var
+R26422:26425 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26413:26419 LTLTab.semantics <> satable def
+R26421:26421 LTLTab.semantics <> G:136 var
+R26426:26432 LTLTab.semantics <> satable def
+R26434:26435 LTLTab.semantics <> G':137 var
+R26537:26546 LTLTab.semantics <> sat_subset thm
+R26537:26546 LTLTab.semantics <> sat_subset thm
+prf 26629:26645 <> unsat_alpha_child
+binder 26658:26660 <> phi:138
+binder 26662:26662 <> s:139
+R26683:26686 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26668:26678 LTLTab.nnf <> nnf_isalpha def
+R26680:26682 LTLTab.semantics <> phi:138 var
+R26701:26706 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26687:26688 Coq.Lists.List <> In def
+R26695:26697 LTLTab.seqt <> s_G proj
+R26699:26699 LTLTab.semantics <> s:139 var
+R26690:26692 LTLTab.semantics <> phi:138 var
+R26742:26745 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26707:26715 LTLTab.semantics <> unsatable def
+R26718:26720 LTLTab.seqt <> s_G proj
+R26723:26733 LTLTab.seqt <> alpha_child def
+R26739:26739 LTLTab.semantics <> s:139 var
+R26735:26737 LTLTab.semantics <> phi:138 var
+R26746:26754 LTLTab.semantics <> unsatable def
+R26757:26759 LTLTab.seqt <> s_G proj
+R26761:26761 LTLTab.semantics <> s:139 var
+R26854:26868 LTLTab.semantics <> sat_alpha_child thm
+R26854:26868 LTLTab.semantics <> sat_alpha_child thm
+prf 26899:26917 <> unsat_beta_children
+binder 26929:26931 <> phi:140
+binder 26933:26933 <> s:141
+R26953:26956 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26939:26948 LTLTab.nnf <> nnf_isbeta def
+R26950:26952 LTLTab.semantics <> phi:140 var
+R26971:26976 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26957:26958 Coq.Lists.List <> In def
+R26965:26967 LTLTab.seqt <> s_G proj
+R26969:26969 LTLTab.semantics <> s:141 var
+R26960:26962 LTLTab.semantics <> phi:140 var
+R27012:27017 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26977:26985 LTLTab.semantics <> unsatable def
+R26988:26990 LTLTab.seqt <> s_G proj
+R26993:27003 LTLTab.seqt <> beta1_child def
+R27009:27009 LTLTab.semantics <> s:141 var
+R27005:27007 LTLTab.semantics <> phi:140 var
+R27053:27060 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R27018:27026 LTLTab.semantics <> unsatable def
+R27029:27031 LTLTab.seqt <> s_G proj
+R27034:27044 LTLTab.seqt <> beta2_child def
+R27050:27050 LTLTab.semantics <> s:141 var
+R27046:27048 LTLTab.semantics <> phi:140 var
+R27061:27069 LTLTab.semantics <> unsatable def
+R27072:27074 LTLTab.seqt <> s_G proj
+R27076:27076 LTLTab.semantics <> s:141 var
+R27137:27153 LTLTab.semantics <> sat_beta_children thm
+R27137:27153 LTLTab.semantics <> sat_beta_children thm
+prf 27265:27287 <> unsat_jump_child_exists
+binder 27300:27300 <> s:142
+R27303:27303 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R27366:27374 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R27304:27310 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R27316:27317 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 27311:27315 <> child:143
+R27341:27344 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R27318:27319 Coq.Lists.List <> In def
+R27328:27337 LTLTab.seqt <> jump_child def
+R27339:27339 LTLTab.semantics <> s:142 var
+R27321:27325 LTLTab.semantics <> child:143 var
+R27345:27353 LTLTab.semantics <> unsatable def
+R27356:27358 LTLTab.seqt <> s_G proj
+R27360:27364 LTLTab.semantics <> child:143 var
+R27375:27383 LTLTab.semantics <> unsatable def
+R27386:27388 LTLTab.seqt <> s_G proj
+R27390:27390 LTLTab.semantics <> s:142 var
+R27461:27474 LTLTab.semantics <> sat_jump_child thm
+R27461:27474 LTLTab.semantics <> sat_jump_child thm
+prf 27564:27575 <> unsat_contra
+binder 27587:27587 <> n:144
+binder 27589:27589 <> s:145
+R27635:27640 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R27613:27616 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R27595:27596 Coq.Lists.List <> In def
+R27607:27609 LTLTab.seqt <> s_G proj
+R27611:27611 LTLTab.semantics <> s:145 var
+R27599:27601 LTLTab.nnf <> var constr
+R27603:27603 LTLTab.semantics <> n:144 var
+R27617:27618 Coq.Lists.List <> In def
+R27629:27631 LTLTab.seqt <> s_G proj
+R27633:27633 LTLTab.semantics <> s:145 var
+R27621:27623 LTLTab.nnf <> neg constr
+R27625:27625 LTLTab.semantics <> n:144 var
+R27641:27649 LTLTab.semantics <> unsatable def
+R27652:27654 LTLTab.seqt <> s_G proj
+R27656:27656 LTLTab.semantics <> s:145 var
