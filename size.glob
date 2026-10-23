@@ -1,0 +1,345 @@
+DIGEST 7cda2ffa47ce8d0fa8ef99a7989bc633
+FLTLTab.size
+R15:19 LTLTab.utils <> <> lib
+R37:39 LTLTab.nnf <> <> lib
+R57:63 LTLTab.closure <> <> lib
+R81:84 LTLTab.seqt <> <> lib
+R103:107 Coq.Arith.Arith <> <> lib
+R125:128 Coq.Lists.List <> <> lib
+R146:155 Coq.Lists.SetoidList <> <> lib
+R165:177 Coq.Lists.List ListNotations <> mod
+R195:203 Coq.Relations.Relations <> <> lib
+R221:231 Coq.Wellfounded.Wellfounded <> <> lib
+R249:251 Coq.micromega.Lia <> <> lib
+R269:275 Coq.Program.Program <> <> lib
+def 292:298 <> lexnat2
+R311:315 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R305:307 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R302:304 Coq.Init.Datatypes <> nat ind
+R308:310 Coq.Init.Datatypes <> nat ind
+R325:328 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R319:321 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R316:318 Coq.Init.Datatypes <> nat ind
+R322:324 Coq.Init.Datatypes <> nat ind
+R339:346 Coq.Relations.Relation_Operators <> slexprod ind
+R355:356 Coq.Init.Peano <> lt def
+R352:353 Coq.Init.Peano <> lt def
+prf 368:377 <> lexnat2_wf
+binder 380:384 <> alpha:1
+R397:400 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R392:396 LTLTab.size <> alpha:1 var
+R404:406 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R401:403 Coq.Init.Datatypes <> nat ind
+R407:409 Coq.Init.Datatypes <> nat ind
+binder 388:388 <> f:2
+R416:427 Coq.Init.Wf <> well_founded def
+R430:431 Coq.Program.Wf <> MR def
+R441:441 LTLTab.size <> f:2 var
+R433:439 LTLTab.size <> lexnat2 def
+R459:465 LTLTab.size <> lexnat2 def
+R475:476 Coq.Program.Wf <> MR def
+R485:500 Coq.Wellfounded.Inverse_Image <> wf_inverse_image thm
+R485:500 Coq.Wellfounded.Inverse_Image <> wf_inverse_image thm
+R509:519 Coq.Wellfounded.Lexicographic_Product <> wf_slexprod thm
+R528:532 Coq.Arith.Wf_nat <> lt_wf thm
+R509:519 Coq.Wellfounded.Lexicographic_Product <> wf_slexprod thm
+R528:532 Coq.Arith.Wf_nat <> lt_wf thm
+R528:532 Coq.Arith.Wf_nat <> lt_wf thm
+def 550:557 <> red_size
+R565:567 LTLTab.nnf <> nnf ind
+binder 560:561 <> xi:3
+R572:574 Coq.Init.Datatypes <> nat ind
+R587:588 LTLTab.size <> xi:3 var
+R599:601 LTLTab.nnf <> var constr
+R620:622 LTLTab.nnf <> neg constr
+R641:643 LTLTab.nnf <> and constr
+R672:674 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R657:659 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R660:667 LTLTab.size <> red_size:4 def
+R675:682 LTLTab.size <> red_size:4 def
+R692:693 LTLTab.nnf <> or constr
+R723:725 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R708:710 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R711:718 LTLTab.size <> red_size:4 def
+R726:733 LTLTab.size <> red_size:4 def
+R743:745 LTLTab.nnf <> bef constr
+R774:776 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R759:761 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R762:769 LTLTab.size <> red_size:4 def
+R777:784 LTLTab.size <> red_size:4 def
+R794:796 LTLTab.nnf <> unt constr
+R825:827 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R810:812 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R813:820 LTLTab.size <> red_size:4 def
+R828:835 LTLTab.size <> red_size:4 def
+R845:848 LTLTab.nnf <> next constr
+prf 876:890 <> red_size_neg_eq
+binder 893:895 <> phi:6
+R922:924 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R900:907 LTLTab.size <> red_size def
+R910:916 LTLTab.nnf <> neg_nnf def
+R918:920 LTLTab.size <> phi:6 var
+R925:932 LTLTab.size <> red_size def
+R934:936 LTLTab.size <> phi:6 var
+prf 991:1008 <> red_size_alpha1_lt
+binder 1011:1013 <> phi:7
+R1035:1038 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1020:1030 LTLTab.nnf <> nnf_isalpha def
+R1032:1034 LTLTab.size <> phi:7 var
+R1064:1066 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R1039:1046 LTLTab.size <> red_size def
+R1049:1058 LTLTab.nnf <> nnf_alpha1 def
+R1060:1062 LTLTab.size <> phi:7 var
+R1067:1074 LTLTab.size <> red_size def
+R1076:1078 LTLTab.size <> phi:7 var
+R1154:1168 LTLTab.size <> red_size_neg_eq thm
+R1154:1168 LTLTab.size <> red_size_neg_eq thm
+R1154:1168 LTLTab.size <> red_size_neg_eq thm
+prf 1188:1205 <> red_size_alpha2_lt
+binder 1208:1210 <> phi:8
+R1232:1235 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1217:1227 LTLTab.nnf <> nnf_isalpha def
+R1229:1231 LTLTab.size <> phi:8 var
+R1261:1263 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R1236:1243 LTLTab.size <> red_size def
+R1246:1255 LTLTab.nnf <> nnf_alpha2 def
+R1257:1259 LTLTab.size <> phi:8 var
+R1264:1271 LTLTab.size <> red_size def
+R1273:1275 LTLTab.size <> phi:8 var
+prf 1355:1371 <> red_size_beta1_lt
+binder 1374:1376 <> phi:9
+R1397:1400 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1383:1392 LTLTab.nnf <> nnf_isbeta def
+R1394:1396 LTLTab.size <> phi:9 var
+R1425:1427 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R1401:1408 LTLTab.size <> red_size def
+R1411:1419 LTLTab.nnf <> nnf_beta1 def
+R1421:1423 LTLTab.size <> phi:9 var
+R1428:1435 LTLTab.size <> red_size def
+R1437:1439 LTLTab.size <> phi:9 var
+prf 1519:1535 <> red_size_beta2_lt
+binder 1538:1540 <> phi:10
+R1561:1564 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1547:1556 LTLTab.nnf <> nnf_isbeta def
+R1558:1560 LTLTab.size <> phi:10 var
+R1589:1591 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R1565:1572 LTLTab.size <> red_size def
+R1575:1583 LTLTab.nnf <> nnf_beta2 def
+R1585:1587 LTLTab.size <> phi:10 var
+R1592:1599 LTLTab.size <> red_size def
+R1601:1603 LTLTab.size <> phi:10 var
+def 1688:1700 <> red_size_list
+R1705:1714 Coq.Lists.List <> fold_right def
+binder 1721:1723 <> phi:11
+binder 1725:1725 <> n:12
+R1742:1744 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R1730:1737 LTLTab.size <> red_size def
+R1739:1741 LTLTab.size <> phi:11 var
+R1745:1745 LTLTab.size <> n:12 var
+prf 1758:1775 <> red_size_list_mono
+binder 1786:1788 <> phi:13
+binder 1790:1790 <> G:14
+R1827:1830 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R1795:1807 LTLTab.size <> red_size_list def
+R1810:1819 LTLTab.nnf <> remove_nnf def
+R1825:1825 LTLTab.size <> G:14 var
+R1821:1823 LTLTab.size <> phi:13 var
+R1831:1843 LTLTab.size <> red_size_list def
+R1845:1845 LTLTab.size <> G:14 var
+R1907:1910 Coq.Init.Peano <> le_n constr
+R1907:1910 Coq.Init.Peano <> le_n constr
+R1932:1940 LTLTab.nnf <> nnf_eqdec def
+R1932:1940 LTLTab.nnf <> nnf_eqdec def
+def 1981:1989 <> seqt_size
+R1996:2001 LTLTab.seqt <> doseqt rec
+binder 1992:1992 <> s:15
+R2009:2011 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R2006:2008 Coq.Init.Datatypes <> nat ind
+R2012:2014 Coq.Init.Datatypes <> nat ind
+R2021:2021 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2075:2079 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2101:2101 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R2058:2060 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R2022:2027 Coq.Init.Datatypes <> length def
+R2030:2038 LTLTab.utils <> power_set def
+R2041:2047 LTLTab.closure <> cl_list def
+R2050:2052 LTLTab.seqt <> s_R proj
+R2054:2054 LTLTab.size <> s:15 var
+R2061:2066 Coq.Init.Datatypes <> length def
+R2069:2071 LTLTab.seqt <> s_H proj
+R2073:2073 LTLTab.size <> s:15 var
+R2080:2092 LTLTab.size <> red_size_list def
+R2095:2097 LTLTab.seqt <> s_G proj
+R2099:2099 LTLTab.size <> s:15 var
+prf 2112:2138 <> size_remove_add_le_size_sum
+binder 2141:2143 <> phi:16
+binder 2145:2145 <> G:17
+R2158:2161 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2150:2151 Coq.Lists.List <> In def
+R2157:2157 LTLTab.size <> G:17 var
+R2153:2155 LTLTab.size <> phi:16 var
+R2209:2212 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R2194:2196 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R2162:2174 LTLTab.size <> red_size_list def
+R2177:2186 LTLTab.nnf <> remove_nnf def
+R2192:2192 LTLTab.size <> G:17 var
+R2188:2190 LTLTab.size <> phi:16 var
+R2197:2204 LTLTab.size <> red_size def
+R2206:2208 LTLTab.size <> phi:16 var
+R2213:2225 LTLTab.size <> red_size_list def
+R2227:2227 LTLTab.size <> G:17 var
+R2363:2371 LTLTab.nnf <> nnf_eqdec def
+R2363:2371 LTLTab.nnf <> nnf_eqdec def
+R2414:2425 Coq.Arith.PeanoNat Nat add_comm thm
+R2414:2425 Coq.Arith.PeanoNat Nat add_comm thm
+R2414:2425 Coq.Arith.PeanoNat Nat add_comm thm
+R2434:2455 Coq.Arith.Arith_prebase <> add_le_mono_l_proj_l2r def
+R2434:2455 Coq.Arith.Arith_prebase <> add_le_mono_l_proj_l2r def
+R2468:2485 LTLTab.size <> red_size_list_mono thm
+R2468:2485 LTLTab.size <> red_size_list_mono thm
+R2509:2517 LTLTab.nnf <> nnf_eqdec def
+R2509:2517 LTLTab.nnf <> nnf_eqdec def
+R2570:2581 Coq.Arith.PeanoNat Nat add_comm thm
+R2570:2581 Coq.Arith.PeanoNat Nat add_comm thm
+R2570:2581 Coq.Arith.PeanoNat Nat add_comm thm
+R2596:2617 Coq.Arith.Arith_prebase <> add_le_mono_l_proj_l2r def
+R2596:2617 Coq.Arith.Arith_prebase <> add_le_mono_l_proj_l2r def
+R2626:2643 LTLTab.size <> red_size_list_mono thm
+R2626:2643 LTLTab.size <> red_size_list_mono thm
+R2671:2683 Coq.Arith.PeanoNat Nat add_assoc thm
+R2671:2683 Coq.Arith.PeanoNat Nat add_assoc thm
+R2671:2683 Coq.Arith.PeanoNat Nat add_assoc thm
+R2693:2714 Coq.Arith.Arith_prebase <> add_le_mono_l_proj_l2r def
+R2693:2714 Coq.Arith.Arith_prebase <> add_le_mono_l_proj_l2r def
+prf 2761:2781 <> alpha_child_decr_size
+binder 2784:2786 <> phi:18
+binder 2788:2788 <> s:19
+R2810:2813 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2795:2805 LTLTab.nnf <> nnf_isalpha def
+R2807:2809 LTLTab.size <> phi:18 var
+R2828:2831 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2814:2815 Coq.Lists.List <> In def
+R2822:2824 LTLTab.seqt <> s_G proj
+R2826:2826 LTLTab.size <> s:19 var
+R2817:2819 LTLTab.size <> phi:18 var
+R2832:2833 Coq.Program.Wf <> MR def
+R2873:2873 LTLTab.size <> s:19 var
+R2854:2864 LTLTab.seqt <> alpha_child def
+R2870:2870 LTLTab.size <> s:19 var
+R2866:2868 LTLTab.size <> phi:18 var
+R2843:2851 LTLTab.size <> seqt_size def
+R2835:2841 LTLTab.size <> lexnat2 def
+R2941:2967 LTLTab.size <> size_remove_add_le_size_sum thm
+R2941:2967 LTLTab.size <> size_remove_add_le_size_sum thm
+R3069:3083 LTLTab.size <> red_size_neg_eq thm
+R3069:3083 LTLTab.size <> red_size_neg_eq thm
+R3069:3083 LTLTab.size <> red_size_neg_eq thm
+prf 3106:3126 <> beta1_child_decr_size
+binder 3129:3131 <> phi:20
+binder 3133:3133 <> s:21
+R3154:3157 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3140:3149 LTLTab.nnf <> nnf_isbeta def
+R3151:3153 LTLTab.size <> phi:20 var
+R3172:3175 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3158:3159 Coq.Lists.List <> In def
+R3166:3168 LTLTab.seqt <> s_G proj
+R3170:3170 LTLTab.size <> s:21 var
+R3161:3163 LTLTab.size <> phi:20 var
+R3176:3177 Coq.Program.Wf <> MR def
+R3217:3217 LTLTab.size <> s:21 var
+R3198:3208 LTLTab.seqt <> beta1_child def
+R3214:3214 LTLTab.size <> s:21 var
+R3210:3212 LTLTab.size <> phi:20 var
+R3187:3195 LTLTab.size <> seqt_size def
+R3179:3185 LTLTab.size <> lexnat2 def
+R3286:3312 LTLTab.size <> size_remove_add_le_size_sum thm
+R3286:3312 LTLTab.size <> size_remove_add_le_size_sum thm
+prf 3424:3444 <> beta2_child_decr_size
+binder 3447:3449 <> phi:22
+binder 3451:3451 <> s:23
+R3472:3475 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3458:3467 LTLTab.nnf <> nnf_isbeta def
+R3469:3471 LTLTab.size <> phi:22 var
+R3490:3493 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3476:3477 Coq.Lists.List <> In def
+R3484:3486 LTLTab.seqt <> s_G proj
+R3488:3488 LTLTab.size <> s:23 var
+R3479:3481 LTLTab.size <> phi:22 var
+R3494:3495 Coq.Program.Wf <> MR def
+R3535:3535 LTLTab.size <> s:23 var
+R3516:3526 LTLTab.seqt <> beta2_child def
+R3532:3532 LTLTab.size <> s:23 var
+R3528:3530 LTLTab.size <> phi:22 var
+R3505:3513 LTLTab.size <> seqt_size def
+R3497:3503 LTLTab.size <> lexnat2 def
+R3604:3630 LTLTab.size <> size_remove_add_le_size_sum thm
+R3604:3630 LTLTab.size <> size_remove_add_le_size_sum thm
+prf 3742:3761 <> jump_child_decr_size
+R3769:3775 LTLTab.seqt <> rdoseqt def
+binder 3764:3765 <> ss:24
+R3784:3799 LTLTab.seqt <> state_conditions rec
+R3802:3802 Coq.Program.Utils <> ::program_scope:'`'_x not
+R3803:3804 LTLTab.size <> ss:24 var
+binder 3779:3780 <> sc:25
+R3816:3831 LTLTab.seqt <> not_blocked_seqt def
+R3834:3834 Coq.Program.Utils <> ::program_scope:'`'_x not
+R3835:3836 LTLTab.size <> ss:24 var
+binder 3811:3812 <> nb:26
+R3844:3845 Coq.Program.Wf <> MR def
+R3885:3885 Coq.Program.Utils <> ::program_scope:'`'_x not
+R3886:3887 LTLTab.size <> ss:24 var
+R3866:3875 LTLTab.seqt <> jump_child def
+R3878:3878 Coq.Program.Utils <> ::program_scope:'`'_x not
+R3879:3880 LTLTab.size <> ss:24 var
+R3855:3863 LTLTab.size <> seqt_size def
+R3847:3853 LTLTab.size <> lexnat2 def
+R3932:3947 LTLTab.seqt <> jump_child_pseqt thm
+R3932:3947 LTLTab.seqt <> jump_child_pseqt thm
+R3980:3989 LTLTab.seqt <> jump_child def
+R3992:3992 Coq.Program.Utils <> ::program_scope:'`'_x not
+R3980:3989 LTLTab.seqt <> jump_child def
+R3992:3992 Coq.Program.Utils <> ::program_scope:'`'_x not
+R4011:4017 LTLTab.seqt <> nodup_H proj
+R4011:4017 LTLTab.seqt <> nodup_H proj
+R4066:4069 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R4040:4045 Coq.Init.Datatypes <> length def
+R4048:4050 Coq.Lists.List <> map def
+R4057:4059 LTLTab.seqt <> s_H proj
+R4052:4054 Coq.Init.Datatypes <> snd def
+R4070:4075 Coq.Init.Datatypes <> length def
+R4078:4086 LTLTab.utils <> power_set def
+R4089:4095 LTLTab.closure <> cl_list def
+R4098:4100 LTLTab.seqt <> s_R proj
+R4066:4069 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R4040:4045 Coq.Init.Datatypes <> length def
+R4048:4050 Coq.Lists.List <> map def
+R4057:4059 LTLTab.seqt <> s_H proj
+R4052:4054 Coq.Init.Datatypes <> snd def
+R4070:4075 Coq.Init.Datatypes <> length def
+R4078:4086 LTLTab.utils <> power_set def
+R4089:4095 LTLTab.closure <> cl_list def
+R4098:4100 LTLTab.seqt <> s_R proj
+R4127:4148 LTLTab.utils <> NoDupA_set_incl_length thm
+R4150:4158 LTLTab.nnf <> nnf_eqdec def
+R4127:4148 LTLTab.utils <> NoDupA_set_incl_length thm
+R4150:4158 LTLTab.nnf <> nnf_eqdec def
+R4186:4192 Coq.Lists.SetoidList <> InA_alt thm
+R4186:4192 Coq.Lists.SetoidList <> InA_alt thm
+R4186:4192 Coq.Lists.SetoidList <> InA_alt thm
+R4241:4249 LTLTab.utils <> eqset_sym thm
+R4241:4249 LTLTab.utils <> eqset_sym thm
+R4267:4273 Coq.Lists.SetoidList <> InA_eqA thm
+R4276:4292 LTLTab.utils <> eqset_equivalence inst
+R4294:4296 LTLTab.nnf <> nnf ind
+R4267:4273 Coq.Lists.SetoidList <> InA_eqA thm
+R4276:4292 LTLTab.utils <> eqset_equivalence inst
+R4294:4296 LTLTab.nnf <> nnf ind
+R4313:4332 LTLTab.utils <> incl_inset_power_set thm
+R4334:4342 LTLTab.nnf <> nnf_eqdec def
+R4313:4332 LTLTab.utils <> incl_inset_power_set thm
+R4334:4342 LTLTab.nnf <> nnf_eqdec def
+R4353:4360 LTLTab.seqt <> H_incl_R proj
+R4353:4360 LTLTab.seqt <> H_incl_R proj
+R4405:4414 Coq.Lists.List <> map_length thm
+R4405:4414 Coq.Lists.List <> map_length thm
+R4405:4414 Coq.Lists.List <> map_length thm

@@ -1,0 +1,1129 @@
+DIGEST 0a73c8db1642753adfe2f04035c4d0b1
+FLTLTab.seqt
+R15:19 LTLTab.utils <> <> lib
+R37:39 LTLTab.nnf <> <> lib
+R57:63 LTLTab.closure <> <> lib
+R82:87 Coq.Strings.String <> <> lib
+R130:133 Coq.Bool.Bool <> <> lib
+R151:155 Coq.Arith.Arith <> <> lib
+R173:176 Coq.Lists.List <> <> lib
+R194:200 Coq.Lists.ListSet <> <> lib
+R218:227 Coq.Lists.SetoidList <> <> lib
+R237:249 Coq.Lists.List ListNotations <> mod
+R267:275 Coq.Relations.Relations <> <> lib
+R293:299 Coq.Program.Program <> <> lib
+R317:319 Coq.micromega.Lia <> <> lib
+rec 370:375 <> doseqt
+proj 388:390 <> s_G
+proj 415:417 <> s_H
+proj 447:449 <> s_c
+proj 468:470 <> s_R
+R394:397 Coq.Init.Datatypes <> list ind
+R399:401 LTLTab.nnf <> nnf ind
+R421:424 Coq.Init.Datatypes <> list ind
+R427:430 Coq.Init.Datatypes <> list ind
+R432:434 LTLTab.nnf <> nnf ind
+R453:456 Coq.Init.Datatypes <> bool ind
+R474:477 Coq.Init.Datatypes <> list ind
+R479:481 LTLTab.nnf <> nnf ind
+def 524:533 <> seqt_eqdec
+R542:547 LTLTab.seqt <> doseqt rec
+binder 536:536 <> s:6
+binder 538:538 <> t:7
+R552:552 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R558:562 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R569:569 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R554:556 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R553:553 LTLTab.seqt <> s:6 var
+R557:557 LTLTab.seqt <> t:7 var
+R564:567 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R563:563 LTLTab.seqt <> s:6 var
+R568:568 LTLTab.seqt <> t:7 var
+R607:617 Coq.Lists.List <> list_eq_dec thm
+R626:634 LTLTab.nnf <> nnf_eqdec def
+R607:617 Coq.Lists.List <> list_eq_dec thm
+R626:634 LTLTab.nnf <> nnf_eqdec def
+R607:617 Coq.Lists.List <> list_eq_dec thm
+R607:617 Coq.Lists.List <> list_eq_dec thm
+R626:634 LTLTab.nnf <> nnf_eqdec def
+R607:617 Coq.Lists.List <> list_eq_dec thm
+R626:634 LTLTab.nnf <> nnf_eqdec def
+R646:653 Coq.Bool.Bool <> bool_dec thm
+R646:653 Coq.Bool.Bool <> bool_dec thm
+R664:674 Coq.Lists.List <> list_eq_dec thm
+R664:674 Coq.Lists.List <> list_eq_dec thm
+R704:712 LTLTab.nnf <> nnf_eqdec def
+R704:712 LTLTab.nnf <> nnf_eqdec def
+rec 732:738 <> regular
+proj 765:771 <> nodup_H
+proj 811:818 <> G_incl_R
+proj 859:866 <> H_incl_R
+R745:750 LTLTab.seqt <> doseqt rec
+binder 741:741 <> s:8
+R779:784 Coq.Lists.SetoidList <> NoDupA ind
+R801:803 LTLTab.seqt <> s_H proj
+R805:805 LTLTab.seqt <> s:8 var
+R789:793 LTLTab.utils <> eqset def
+R795:797 LTLTab.nnf <> nnf ind
+R825:828 Coq.Lists.List <> incl def
+R839:845 LTLTab.closure <> cl_list def
+R848:850 LTLTab.seqt <> s_R proj
+R852:852 LTLTab.seqt <> s:8 var
+R831:833 LTLTab.seqt <> s_G proj
+R835:835 LTLTab.seqt <> s:8 var
+binder 877:877 <> G:12
+R892:895 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R880:881 Coq.Lists.List <> In def
+R886:888 LTLTab.seqt <> s_H proj
+R890:890 LTLTab.seqt <> s:8 var
+R883:883 LTLTab.seqt <> G:12 var
+R896:899 Coq.Lists.List <> incl def
+R904:910 LTLTab.closure <> cl_list def
+R913:915 LTLTab.seqt <> s_R proj
+R917:917 LTLTab.seqt <> s:8 var
+R901:901 LTLTab.seqt <> G:12 var
+def 938:944 <> rdoseqt
+R949:949 Coq.Init.Specif <> ::type_scope:'{'_x_'|'_x_'}' not
+R951:953 Coq.Init.Specif <> ::type_scope:'{'_x_'|'_x_'}' not
+R963:963 Coq.Init.Specif <> ::type_scope:'{'_x_'|'_x_'}' not
+binder 950:950 <> s:14
+R954:960 LTLTab.seqt <> regular rec
+R962:962 LTLTab.seqt <> s:14 var
+rec 976:981 <> upseqt
+proj 988:992 <> s_uev
+proj 1008:1011 <> s_lp
+R996:999 Coq.Init.Datatypes <> list ind
+R1001:1003 LTLTab.nnf <> nnf ind
+R1016:1018 Coq.Init.Datatypes <> nat ind
+def 1035:1046 <> upseqt_eqdec
+R1055:1060 LTLTab.seqt <> upseqt rec
+binder 1049:1049 <> s:18
+binder 1051:1051 <> t:19
+R1065:1065 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R1071:1075 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R1082:1082 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R1067:1069 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1066:1066 LTLTab.seqt <> s:18 var
+R1070:1070 LTLTab.seqt <> t:19 var
+R1077:1080 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R1076:1076 LTLTab.seqt <> s:18 var
+R1081:1081 LTLTab.seqt <> t:19 var
+R1117:1126 Coq.Arith.PeanoNat Nat eq_dec thm
+R1117:1126 Coq.Arith.PeanoNat Nat eq_dec thm
+R1137:1147 Coq.Lists.List <> list_eq_dec thm
+R1156:1164 LTLTab.nnf <> nnf_eqdec def
+R1137:1147 Coq.Lists.List <> list_eq_dec thm
+R1156:1164 LTLTab.nnf <> nnf_eqdec def
+def 1188:1196 <> full_seqt
+R1213:1215 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R1207:1212 LTLTab.seqt <> doseqt rec
+R1216:1221 LTLTab.seqt <> upseqt rec
+def 1236:1250 <> full_seqt_eqdec
+R1263:1271 LTLTab.seqt <> full_seqt def
+binder 1253:1255 <> fs1:20
+binder 1257:1259 <> fs2:21
+R1276:1276 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R1286:1290 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R1301:1301 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R1280:1282 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1277:1279 LTLTab.seqt <> fs1:20 var
+R1283:1285 LTLTab.seqt <> fs2:21 var
+R1294:1297 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R1291:1293 LTLTab.seqt <> fs1:20 var
+R1298:1300 LTLTab.seqt <> fs2:21 var
+R1335:1346 LTLTab.seqt <> upseqt_eqdec def
+R1356:1365 LTLTab.seqt <> seqt_eqdec def
+R1335:1346 LTLTab.seqt <> upseqt_eqdec def
+R1356:1365 LTLTab.seqt <> seqt_eqdec def
+def 1390:1396 <> df_seqt
+R1400:1405 LTLTab.seqt <> doseqt rec
+R1415:1417 LTLTab.seqt <> s_G proj
+R1415:1417 LTLTab.seqt <> s_G proj
+R1415:1417 LTLTab.seqt <> s_G proj
+R1426:1428 LTLTab.seqt <> s_H proj
+R1426:1428 LTLTab.seqt <> s_H proj
+R1437:1439 LTLTab.seqt <> s_c proj
+R1437:1439 LTLTab.seqt <> s_c proj
+R1451:1453 LTLTab.seqt <> s_R proj
+R1451:1453 LTLTab.seqt <> s_R proj
+R1422:1423 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R1433:1434 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R1444:1448 Coq.Init.Datatypes <> false constr
+R1458:1459 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+def 1477:1485 <> df_upseqt
+R1489:1494 LTLTab.seqt <> upseqt rec
+R1502:1506 LTLTab.seqt <> s_uev proj
+R1502:1506 LTLTab.seqt <> s_uev proj
+R1502:1506 LTLTab.seqt <> s_uev proj
+R1515:1518 LTLTab.seqt <> s_lp proj
+R1515:1518 LTLTab.seqt <> s_lp proj
+R1511:1512 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R1523:1523 Coq.Init.Datatypes <> O constr
+def 1541:1548 <> df_fseqt
+R1553:1553 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1561:1562 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1572:1572 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1554:1560 LTLTab.seqt <> df_seqt def
+R1563:1571 LTLTab.seqt <> df_upseqt def
+def 1589:1599 <> alpha_child
+R1608:1610 LTLTab.nnf <> nnf ind
+binder 1602:1604 <> phi:22
+R1618:1623 LTLTab.seqt <> doseqt rec
+binder 1614:1614 <> s:23
+R1628:1633 LTLTab.seqt <> doseqt rec
+R1643:1645 LTLTab.seqt <> s_G proj
+R1643:1645 LTLTab.seqt <> s_G proj
+R1643:1645 LTLTab.seqt <> s_G proj
+R1712:1714 LTLTab.seqt <> s_H proj
+R1712:1714 LTLTab.seqt <> s_H proj
+R1728:1730 LTLTab.seqt <> s_c proj
+R1728:1730 LTLTab.seqt <> s_c proj
+R1744:1746 LTLTab.seqt <> s_R proj
+R1744:1746 LTLTab.seqt <> s_R proj
+R1664:1667 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1650:1659 LTLTab.nnf <> nnf_alpha1 def
+R1661:1663 LTLTab.seqt <> phi:22 var
+R1682:1685 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R1668:1677 LTLTab.nnf <> nnf_alpha2 def
+R1679:1681 LTLTab.seqt <> phi:22 var
+R1686:1695 LTLTab.nnf <> remove_nnf def
+R1702:1704 LTLTab.seqt <> s_G proj
+R1706:1706 LTLTab.seqt <> s:23 var
+R1697:1699 LTLTab.seqt <> phi:22 var
+R1719:1721 LTLTab.seqt <> s_H proj
+R1723:1723 LTLTab.seqt <> s:23 var
+R1735:1739 Coq.Init.Datatypes <> false constr
+R1751:1753 LTLTab.seqt <> s_R proj
+R1755:1755 LTLTab.seqt <> s:23 var
+def 1773:1786 <> get_alpha_seqt
+R1793:1798 LTLTab.seqt <> doseqt rec
+binder 1789:1789 <> s:24
+R1852:1857 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R1905:1905 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R1805:1805 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1809:1811 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1815:1817 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1851:1851 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1812:1814 LTLTab.nnf <> nnf ind
+binder 1806:1808 <> phi:25
+R1832:1835 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R1818:1819 Coq.Lists.List <> In def
+R1826:1828 LTLTab.seqt <> s_G proj
+R1830:1830 LTLTab.seqt <> s:24 var
+R1821:1823 LTLTab.seqt <> phi:25 var
+R1836:1846 LTLTab.nnf <> nnf_isalpha def
+R1848:1850 LTLTab.seqt <> phi:25 var
+binder 1865:1867 <> phi:26
+R1884:1887 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1870:1871 Coq.Lists.List <> In def
+R1878:1880 LTLTab.seqt <> s_G proj
+R1882:1882 LTLTab.seqt <> s:24 var
+R1873:1875 LTLTab.seqt <> phi:26 var
+R1888:1889 Coq.Init.Logic <> ::type_scope:'~'_x not
+R1890:1900 LTLTab.nnf <> nnf_isalpha def
+R1902:1904 LTLTab.seqt <> phi:26 var
+R1925:1933 LTLTab.nnf <> get_alpha def
+R1936:1938 LTLTab.seqt <> s_G proj
+R1925:1933 LTLTab.nnf <> get_alpha def
+R1936:1938 LTLTab.seqt <> s_G proj
+prf 1998:2014 <> alpha_child_pseqt
+R2023:2025 LTLTab.nnf <> nnf ind
+binder 2017:2019 <> phi:27
+R2036:2046 LTLTab.nnf <> nnf_isalpha def
+R2048:2050 LTLTab.seqt <> phi:27 var
+binder 2029:2032 <> Hphi:28
+R2061:2067 LTLTab.seqt <> rdoseqt def
+binder 2056:2057 <> ss:29
+R2077:2078 Coq.Lists.List <> In def
+R2085:2087 LTLTab.seqt <> s_G proj
+R2090:2090 Coq.Program.Utils <> ::program_scope:'`'_x not
+R2091:2092 LTLTab.seqt <> ss:29 var
+R2080:2082 LTLTab.seqt <> phi:27 var
+binder 2071:2073 <> Hin:30
+R2103:2109 LTLTab.seqt <> regular rec
+R2112:2122 LTLTab.seqt <> alpha_child def
+R2129:2129 Coq.Program.Utils <> ::program_scope:'`'_x not
+R2130:2131 LTLTab.seqt <> ss:29 var
+R2124:2126 LTLTab.seqt <> phi:27 var
+R2215:2221 LTLTab.seqt <> nodup_H proj
+R2215:2221 LTLTab.seqt <> nodup_H proj
+R2251:2266 LTLTab.closure <> in_cl_list_alpha thm
+R2273:2275 LTLTab.seqt <> s_R proj
+R2251:2266 LTLTab.closure <> in_cl_list_alpha thm
+R2273:2275 LTLTab.seqt <> s_R proj
+R2311:2318 LTLTab.seqt <> G_incl_R proj
+R2311:2318 LTLTab.seqt <> G_incl_R proj
+R2424:2431 LTLTab.seqt <> G_incl_R proj
+R2424:2431 LTLTab.seqt <> G_incl_R proj
+R2460:2468 LTLTab.nnf <> nnf_eqdec def
+R2445:2453 Coq.Lists.List <> in_remove thm
+R2460:2468 LTLTab.nnf <> nnf_eqdec def
+R2445:2453 Coq.Lists.List <> in_remove thm
+R2505:2512 LTLTab.seqt <> H_incl_R proj
+R2505:2512 LTLTab.seqt <> H_incl_R proj
+def 2537:2553 <> alpha_child_sseqt
+R2562:2564 LTLTab.nnf <> nnf ind
+binder 2556:2558 <> phi:31
+R2575:2585 LTLTab.nnf <> nnf_isalpha def
+R2587:2589 LTLTab.seqt <> phi:31 var
+binder 2568:2571 <> Hphi:32
+R2600:2606 LTLTab.seqt <> rdoseqt def
+binder 2595:2596 <> ss:33
+R2616:2617 Coq.Lists.List <> In def
+R2624:2626 LTLTab.seqt <> s_G proj
+R2629:2629 Coq.Program.Utils <> ::program_scope:'`'_x not
+R2630:2631 LTLTab.seqt <> ss:33 var
+R2619:2621 LTLTab.seqt <> phi:31 var
+binder 2610:2612 <> Hin:34
+R2638:2644 LTLTab.seqt <> rdoseqt def
+R2651:2655 Coq.Init.Specif <> exist constr
+R2684:2700 LTLTab.seqt <> alpha_child_pseqt thm
+R2710:2712 LTLTab.seqt <> Hin:34 var
+R2707:2708 LTLTab.seqt <> ss:33 var
+R2702:2705 LTLTab.seqt <> Hphi:32 var
+R2660:2670 LTLTab.seqt <> alpha_child def
+R2677:2677 Coq.Program.Utils <> ::program_scope:'`'_x not
+R2678:2679 LTLTab.seqt <> ss:33 var
+R2672:2674 LTLTab.seqt <> phi:31 var
+def 2731:2741 <> beta1_child
+R2750:2752 LTLTab.nnf <> nnf ind
+binder 2744:2746 <> phi:35
+R2760:2765 LTLTab.seqt <> doseqt rec
+binder 2756:2756 <> s:36
+R2770:2775 LTLTab.seqt <> doseqt rec
+R2785:2787 LTLTab.seqt <> s_G proj
+R2785:2787 LTLTab.seqt <> s_G proj
+R2785:2787 LTLTab.seqt <> s_G proj
+R2835:2837 LTLTab.seqt <> s_H proj
+R2835:2837 LTLTab.seqt <> s_H proj
+R2851:2853 LTLTab.seqt <> s_c proj
+R2851:2853 LTLTab.seqt <> s_c proj
+R2867:2869 LTLTab.seqt <> s_R proj
+R2867:2869 LTLTab.seqt <> s_R proj
+R2805:2808 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R2792:2800 LTLTab.nnf <> nnf_beta1 def
+R2802:2804 LTLTab.seqt <> phi:35 var
+R2809:2818 LTLTab.nnf <> remove_nnf def
+R2825:2827 LTLTab.seqt <> s_G proj
+R2829:2829 LTLTab.seqt <> s:36 var
+R2820:2822 LTLTab.seqt <> phi:35 var
+R2842:2844 LTLTab.seqt <> s_H proj
+R2846:2846 LTLTab.seqt <> s:36 var
+R2858:2862 Coq.Init.Datatypes <> false constr
+R2874:2876 LTLTab.seqt <> s_R proj
+R2878:2878 LTLTab.seqt <> s:36 var
+def 2896:2906 <> beta2_child
+R2915:2917 LTLTab.nnf <> nnf ind
+binder 2909:2911 <> phi:37
+R2925:2930 LTLTab.seqt <> doseqt rec
+binder 2921:2921 <> s:38
+R2935:2940 LTLTab.seqt <> doseqt rec
+R2950:2952 LTLTab.seqt <> s_G proj
+R2950:2952 LTLTab.seqt <> s_G proj
+R2950:2952 LTLTab.seqt <> s_G proj
+R3000:3002 LTLTab.seqt <> s_H proj
+R3000:3002 LTLTab.seqt <> s_H proj
+R3016:3018 LTLTab.seqt <> s_c proj
+R3016:3018 LTLTab.seqt <> s_c proj
+R3032:3034 LTLTab.seqt <> s_R proj
+R3032:3034 LTLTab.seqt <> s_R proj
+R2970:2973 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R2957:2965 LTLTab.nnf <> nnf_beta2 def
+R2967:2969 LTLTab.seqt <> phi:37 var
+R2974:2983 LTLTab.nnf <> remove_nnf def
+R2990:2992 LTLTab.seqt <> s_G proj
+R2994:2994 LTLTab.seqt <> s:38 var
+R2985:2987 LTLTab.seqt <> phi:37 var
+R3007:3009 LTLTab.seqt <> s_H proj
+R3011:3011 LTLTab.seqt <> s:38 var
+R3023:3027 Coq.Init.Datatypes <> false constr
+R3039:3041 LTLTab.seqt <> s_R proj
+R3043:3043 LTLTab.seqt <> s:38 var
+def 3061:3073 <> get_beta_seqt
+R3080:3085 LTLTab.seqt <> doseqt rec
+binder 3076:3076 <> s:39
+R3138:3143 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R3190:3190 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R3092:3092 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R3096:3098 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R3102:3104 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R3137:3137 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R3099:3101 LTLTab.nnf <> nnf ind
+binder 3093:3095 <> phi:40
+R3119:3122 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R3105:3106 Coq.Lists.List <> In def
+R3113:3115 LTLTab.seqt <> s_G proj
+R3117:3117 LTLTab.seqt <> s:39 var
+R3108:3110 LTLTab.seqt <> phi:40 var
+R3123:3132 LTLTab.nnf <> nnf_isbeta def
+R3134:3136 LTLTab.seqt <> phi:40 var
+binder 3151:3153 <> phi:41
+R3170:3173 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3156:3157 Coq.Lists.List <> In def
+R3164:3166 LTLTab.seqt <> s_G proj
+R3168:3168 LTLTab.seqt <> s:39 var
+R3159:3161 LTLTab.seqt <> phi:41 var
+R3174:3175 Coq.Init.Logic <> ::type_scope:'~'_x not
+R3176:3185 LTLTab.nnf <> nnf_isbeta def
+R3187:3189 LTLTab.seqt <> phi:41 var
+R3210:3217 LTLTab.nnf <> get_beta def
+R3220:3222 LTLTab.seqt <> s_G proj
+R3210:3217 LTLTab.nnf <> get_beta def
+R3220:3222 LTLTab.seqt <> s_G proj
+prf 3282:3298 <> beta1_child_pseqt
+R3307:3309 LTLTab.nnf <> nnf ind
+binder 3301:3303 <> phi:42
+R3320:3329 LTLTab.nnf <> nnf_isbeta def
+R3331:3333 LTLTab.seqt <> phi:42 var
+binder 3313:3316 <> Hphi:43
+R3344:3350 LTLTab.seqt <> rdoseqt def
+binder 3339:3340 <> ss:44
+R3360:3361 Coq.Lists.List <> In def
+R3368:3370 LTLTab.seqt <> s_G proj
+R3373:3373 Coq.Program.Utils <> ::program_scope:'`'_x not
+R3374:3375 LTLTab.seqt <> ss:44 var
+R3363:3365 LTLTab.seqt <> phi:42 var
+binder 3354:3356 <> Hin:45
+R3386:3392 LTLTab.seqt <> regular rec
+R3395:3405 LTLTab.seqt <> beta1_child def
+R3412:3412 Coq.Program.Utils <> ::program_scope:'`'_x not
+R3413:3414 LTLTab.seqt <> ss:44 var
+R3407:3409 LTLTab.seqt <> phi:42 var
+R3498:3504 LTLTab.seqt <> nodup_H proj
+R3498:3504 LTLTab.seqt <> nodup_H proj
+R3534:3548 LTLTab.closure <> in_cl_list_beta thm
+R3555:3557 LTLTab.seqt <> s_R proj
+R3534:3548 LTLTab.closure <> in_cl_list_beta thm
+R3555:3557 LTLTab.seqt <> s_R proj
+R3593:3600 LTLTab.seqt <> G_incl_R proj
+R3593:3600 LTLTab.seqt <> G_incl_R proj
+R3699:3706 LTLTab.seqt <> G_incl_R proj
+R3699:3706 LTLTab.seqt <> G_incl_R proj
+R3735:3743 LTLTab.nnf <> nnf_eqdec def
+R3720:3728 Coq.Lists.List <> in_remove thm
+R3735:3743 LTLTab.nnf <> nnf_eqdec def
+R3720:3728 Coq.Lists.List <> in_remove thm
+R3780:3787 LTLTab.seqt <> H_incl_R proj
+R3780:3787 LTLTab.seqt <> H_incl_R proj
+prf 3809:3825 <> beta2_child_pseqt
+R3834:3836 LTLTab.nnf <> nnf ind
+binder 3828:3830 <> phi:46
+R3847:3856 LTLTab.nnf <> nnf_isbeta def
+R3858:3860 LTLTab.seqt <> phi:46 var
+binder 3840:3843 <> Hphi:47
+R3871:3877 LTLTab.seqt <> rdoseqt def
+binder 3866:3867 <> ss:48
+R3887:3888 Coq.Lists.List <> In def
+R3895:3897 LTLTab.seqt <> s_G proj
+R3900:3900 Coq.Program.Utils <> ::program_scope:'`'_x not
+R3901:3902 LTLTab.seqt <> ss:48 var
+R3890:3892 LTLTab.seqt <> phi:46 var
+binder 3881:3883 <> Hin:49
+R3913:3919 LTLTab.seqt <> regular rec
+R3922:3932 LTLTab.seqt <> beta2_child def
+R3939:3939 Coq.Program.Utils <> ::program_scope:'`'_x not
+R3940:3941 LTLTab.seqt <> ss:48 var
+R3934:3936 LTLTab.seqt <> phi:46 var
+R4025:4031 LTLTab.seqt <> nodup_H proj
+R4025:4031 LTLTab.seqt <> nodup_H proj
+R4061:4075 LTLTab.closure <> in_cl_list_beta thm
+R4082:4084 LTLTab.seqt <> s_R proj
+R4061:4075 LTLTab.closure <> in_cl_list_beta thm
+R4082:4084 LTLTab.seqt <> s_R proj
+R4120:4127 LTLTab.seqt <> G_incl_R proj
+R4120:4127 LTLTab.seqt <> G_incl_R proj
+R4226:4233 LTLTab.seqt <> G_incl_R proj
+R4226:4233 LTLTab.seqt <> G_incl_R proj
+R4262:4270 LTLTab.nnf <> nnf_eqdec def
+R4247:4255 Coq.Lists.List <> in_remove thm
+R4262:4270 LTLTab.nnf <> nnf_eqdec def
+R4247:4255 Coq.Lists.List <> in_remove thm
+R4307:4314 LTLTab.seqt <> H_incl_R proj
+R4307:4314 LTLTab.seqt <> H_incl_R proj
+def 4339:4355 <> beta1_child_sseqt
+R4364:4366 LTLTab.nnf <> nnf ind
+binder 4358:4360 <> phi:50
+R4377:4386 LTLTab.nnf <> nnf_isbeta def
+R4388:4390 LTLTab.seqt <> phi:50 var
+binder 4370:4373 <> Hphi:51
+R4401:4407 LTLTab.seqt <> rdoseqt def
+binder 4396:4397 <> ss:52
+R4417:4418 Coq.Lists.List <> In def
+R4425:4427 LTLTab.seqt <> s_G proj
+R4430:4430 Coq.Program.Utils <> ::program_scope:'`'_x not
+R4431:4432 LTLTab.seqt <> ss:52 var
+R4420:4422 LTLTab.seqt <> phi:50 var
+binder 4411:4413 <> Hin:53
+R4439:4445 LTLTab.seqt <> rdoseqt def
+R4452:4456 Coq.Init.Specif <> exist constr
+R4485:4501 LTLTab.seqt <> beta1_child_pseqt thm
+R4511:4513 LTLTab.seqt <> Hin:53 var
+R4508:4509 LTLTab.seqt <> ss:52 var
+R4503:4506 LTLTab.seqt <> Hphi:51 var
+R4461:4471 LTLTab.seqt <> beta1_child def
+R4478:4478 Coq.Program.Utils <> ::program_scope:'`'_x not
+R4479:4480 LTLTab.seqt <> ss:52 var
+R4473:4475 LTLTab.seqt <> phi:50 var
+def 4529:4545 <> beta2_child_sseqt
+R4554:4556 LTLTab.nnf <> nnf ind
+binder 4548:4550 <> phi:54
+R4567:4576 LTLTab.nnf <> nnf_isbeta def
+R4578:4580 LTLTab.seqt <> phi:54 var
+binder 4560:4563 <> Hphi:55
+R4591:4597 LTLTab.seqt <> rdoseqt def
+binder 4586:4587 <> ss:56
+R4607:4608 Coq.Lists.List <> In def
+R4615:4617 LTLTab.seqt <> s_G proj
+R4620:4620 Coq.Program.Utils <> ::program_scope:'`'_x not
+R4621:4622 LTLTab.seqt <> ss:56 var
+R4610:4612 LTLTab.seqt <> phi:54 var
+binder 4601:4603 <> Hin:57
+R4629:4635 LTLTab.seqt <> rdoseqt def
+R4642:4646 Coq.Init.Specif <> exist constr
+R4675:4691 LTLTab.seqt <> beta2_child_pseqt thm
+R4701:4703 LTLTab.seqt <> Hin:57 var
+R4698:4699 LTLTab.seqt <> ss:56 var
+R4693:4696 LTLTab.seqt <> Hphi:55 var
+R4651:4661 LTLTab.seqt <> beta2_child def
+R4668:4668 Coq.Program.Utils <> ::program_scope:'`'_x not
+R4669:4670 LTLTab.seqt <> ss:56 var
+R4663:4665 LTLTab.seqt <> phi:54 var
+def 4721:4730 <> get_contra
+R4745:4748 Coq.Init.Datatypes <> list ind
+R4750:4752 LTLTab.nnf <> nnf ind
+binder 4741:4741 <> G:58
+R4800:4805 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R4846:4846 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R4757:4757 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4759:4761 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4768:4770 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4799:4799 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R4762:4767 Coq.Strings.String <> string ind
+binder 4758:4758 <> s:59
+R4783:4786 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R4771:4772 Coq.Lists.List <> In def
+R4782:4782 LTLTab.seqt <> G:58 var
+R4775:4777 LTLTab.nnf <> var constr
+R4779:4779 LTLTab.seqt <> s:59 var
+R4787:4788 Coq.Lists.List <> In def
+R4798:4798 LTLTab.seqt <> G:58 var
+R4791:4793 LTLTab.nnf <> neg constr
+R4795:4795 LTLTab.seqt <> s:59 var
+binder 4813:4813 <> s:60
+R4828:4831 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4816:4817 Coq.Lists.List <> In def
+R4827:4827 LTLTab.seqt <> G:58 var
+R4820:4822 LTLTab.nnf <> var constr
+R4824:4824 LTLTab.seqt <> s:60 var
+R4832:4833 Coq.Init.Logic <> ::type_scope:'~'_x not
+R4834:4835 Coq.Lists.List <> In def
+R4845:4845 LTLTab.seqt <> G:58 var
+R4838:4840 LTLTab.nnf <> neg constr
+R4842:4842 LTLTab.seqt <> s:60 var
+R5217:5222 Coq.Lists.List <> in_dec thm
+R5235:5237 LTLTab.nnf <> neg constr
+R5224:5232 LTLTab.nnf <> nnf_eqdec def
+R5217:5222 Coq.Lists.List <> in_dec thm
+R5235:5237 LTLTab.nnf <> neg constr
+R5224:5232 LTLTab.nnf <> nnf_eqdec def
+R5597:5602 Coq.Lists.List <> in_dec thm
+R5615:5617 LTLTab.nnf <> var constr
+R5604:5612 LTLTab.nnf <> nnf_eqdec def
+R5597:5602 Coq.Lists.List <> in_dec thm
+R5615:5617 LTLTab.nnf <> var constr
+R5604:5612 LTLTab.nnf <> nnf_eqdec def
+R5782:5791 Coq.Strings.String <> string_dec def
+R5782:5791 Coq.Strings.String <> string_dec def
+def 6015:6023 <> get_enext
+R6038:6041 Coq.Init.Datatypes <> list ind
+R6043:6045 LTLTab.nnf <> nnf ind
+binder 6034:6034 <> G:61
+R6050:6050 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R6079:6083 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R6114:6114 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R6051:6057 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6061:6062 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 6058:6060 <> phi:62
+R6063:6064 Coq.Lists.List <> In def
+R6078:6078 LTLTab.seqt <> G:61 var
+R6067:6071 LTLTab.nnf <> enext constr
+R6073:6075 LTLTab.seqt <> phi:62 var
+binder 6091:6093 <> phi:63
+R6096:6097 Coq.Init.Logic <> ::type_scope:'~'_x not
+R6098:6099 Coq.Lists.List <> In def
+R6113:6113 LTLTab.seqt <> G:61 var
+R6102:6106 LTLTab.nnf <> enext constr
+R6108:6110 LTLTab.seqt <> phi:63 var
+def 6415:6423 <> get_anext
+R6438:6441 Coq.Init.Datatypes <> list ind
+R6443:6445 LTLTab.nnf <> nnf ind
+binder 6434:6434 <> G:64
+R6450:6450 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R6479:6483 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R6514:6514 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R6451:6457 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6461:6462 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 6458:6460 <> phi:65
+R6463:6464 Coq.Lists.List <> In def
+R6478:6478 LTLTab.seqt <> G:64 var
+R6467:6471 LTLTab.nnf <> anext constr
+R6473:6475 LTLTab.seqt <> phi:65 var
+binder 6491:6493 <> phi:66
+R6496:6497 Coq.Init.Logic <> ::type_scope:'~'_x not
+R6498:6499 Coq.Lists.List <> In def
+R6513:6513 LTLTab.seqt <> G:64 var
+R6502:6506 LTLTab.nnf <> anext constr
+R6508:6510 LTLTab.seqt <> phi:66 var
+def 6813:6819 <> unanext
+R6826:6829 Coq.Init.Datatypes <> list ind
+R6831:6833 LTLTab.nnf <> nnf ind
+binder 6822:6822 <> G:67
+R6838:6841 Coq.Init.Datatypes <> list ind
+R6843:6845 LTLTab.nnf <> nnf ind
+R6858:6858 LTLTab.seqt <> G:67 var
+R6869:6870 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R6890:6891 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R6897:6897 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6907:6911 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6898:6902 LTLTab.nnf <> anext constr
+R6922:6925 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6926:6932 LTLTab.seqt <> unanext:68 def
+R6943:6946 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6964:6970 LTLTab.seqt <> unanext:68 def
+def 6993:6999 <> unenext
+R7006:7009 Coq.Init.Datatypes <> list ind
+R7011:7013 LTLTab.nnf <> nnf ind
+binder 7002:7002 <> G:70
+R7018:7021 Coq.Init.Datatypes <> list ind
+R7023:7025 LTLTab.nnf <> nnf ind
+R7038:7038 LTLTab.seqt <> G:70 var
+R7049:7050 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R7070:7071 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R7077:7077 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R7087:7091 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R7078:7082 LTLTab.nnf <> enext constr
+R7102:7105 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R7106:7112 LTLTab.seqt <> unenext:71 def
+R7123:7126 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R7144:7150 LTLTab.seqt <> unenext:71 def
+def 7175:7184 <> unnext_for
+R7193:7195 LTLTab.nnf <> nnf ind
+binder 7187:7189 <> phi:73
+R7203:7206 Coq.Init.Datatypes <> list ind
+R7208:7210 LTLTab.nnf <> nnf ind
+binder 7199:7199 <> G:74
+R7215:7218 Coq.Init.Datatypes <> list ind
+R7220:7222 LTLTab.nnf <> nnf ind
+R7232:7235 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R7229:7231 LTLTab.seqt <> phi:73 var
+R7236:7242 LTLTab.seqt <> unanext def
+R7244:7244 LTLTab.seqt <> G:74 var
+def 7259:7268 <> jump_child
+R7275:7280 LTLTab.seqt <> doseqt rec
+binder 7271:7271 <> s:75
+R7285:7288 Coq.Init.Datatypes <> list ind
+R7290:7295 LTLTab.seqt <> doseqt rec
+R7308:7314 LTLTab.seqt <> unenext def
+R7317:7319 LTLTab.seqt <> s_G proj
+R7321:7321 LTLTab.seqt <> s:75 var
+R7333:7334 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R7345:7356 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R7454:7463 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R7357:7359 LTLTab.seqt <> s_G proj
+R7357:7359 LTLTab.seqt <> s_G proj
+R7357:7359 LTLTab.seqt <> s_G proj
+R7389:7391 LTLTab.seqt <> s_H proj
+R7389:7391 LTLTab.seqt <> s_H proj
+R7420:7422 LTLTab.seqt <> s_c proj
+R7420:7422 LTLTab.seqt <> s_c proj
+R7442:7444 LTLTab.seqt <> s_R proj
+R7442:7444 LTLTab.seqt <> s_R proj
+R7364:7370 LTLTab.seqt <> unanext def
+R7373:7375 LTLTab.seqt <> s_G proj
+R7377:7377 LTLTab.seqt <> s:75 var
+R7401:7404 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R7396:7398 LTLTab.seqt <> s_G proj
+R7400:7400 LTLTab.seqt <> s:75 var
+R7405:7407 LTLTab.seqt <> s_H proj
+R7409:7409 LTLTab.seqt <> s:75 var
+R7427:7431 Coq.Init.Datatypes <> false constr
+R7449:7451 LTLTab.seqt <> s_R proj
+R7453:7453 LTLTab.seqt <> s:75 var
+R7480:7482 Coq.Lists.List <> map def
+binder 7497:7499 <> phi:76
+R7529:7531 LTLTab.seqt <> s_G proj
+R7529:7531 LTLTab.seqt <> s_G proj
+R7529:7531 LTLTab.seqt <> s_G proj
+R7572:7574 LTLTab.seqt <> s_H proj
+R7572:7574 LTLTab.seqt <> s_H proj
+R7607:7609 LTLTab.seqt <> s_c proj
+R7607:7609 LTLTab.seqt <> s_c proj
+R7633:7635 LTLTab.seqt <> s_R proj
+R7633:7635 LTLTab.seqt <> s_R proj
+R7539:7542 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R7536:7538 LTLTab.seqt <> phi:76 var
+R7543:7549 LTLTab.seqt <> unanext def
+R7552:7554 LTLTab.seqt <> s_G proj
+R7556:7556 LTLTab.seqt <> s:75 var
+R7584:7587 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R7579:7581 LTLTab.seqt <> s_G proj
+R7583:7583 LTLTab.seqt <> s:75 var
+R7588:7590 LTLTab.seqt <> s_H proj
+R7592:7592 LTLTab.seqt <> s:75 var
+R7614:7618 Coq.Init.Datatypes <> false constr
+R7640:7642 LTLTab.seqt <> s_R proj
+R7644:7644 LTLTab.seqt <> s:75 var
+prf 7684:7702 <> in_unenext_in_enext
+binder 7705:7705 <> G:77
+binder 7719:7721 <> phi:78
+R7742:7745 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7724:7725 Coq.Lists.List <> In def
+R7732:7738 LTLTab.seqt <> unenext def
+R7740:7740 LTLTab.seqt <> G:77 var
+R7727:7729 LTLTab.seqt <> phi:78 var
+R7746:7747 Coq.Lists.List <> In def
+R7761:7761 LTLTab.seqt <> G:77 var
+R7750:7754 LTLTab.nnf <> enext constr
+R7756:7758 LTLTab.seqt <> phi:78 var
+prf 8008:8026 <> in_unanext_in_anext
+binder 8029:8029 <> G:79
+binder 8043:8045 <> phi:80
+R8066:8069 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8048:8049 Coq.Lists.List <> In def
+R8056:8062 LTLTab.seqt <> unanext def
+R8064:8064 LTLTab.seqt <> G:79 var
+R8051:8053 LTLTab.seqt <> phi:80 var
+R8070:8071 Coq.Lists.List <> In def
+R8085:8085 LTLTab.seqt <> G:79 var
+R8074:8078 LTLTab.nnf <> anext constr
+R8080:8082 LTLTab.seqt <> phi:80 var
+prf 8332:8350 <> in_enext_in_unenext
+binder 8353:8353 <> G:81
+binder 8367:8369 <> phi:82
+R8388:8391 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8372:8373 Coq.Lists.List <> In def
+R8387:8387 LTLTab.seqt <> G:81 var
+R8376:8380 LTLTab.nnf <> enext constr
+R8382:8384 LTLTab.seqt <> phi:82 var
+R8392:8393 Coq.Lists.List <> In def
+R8400:8406 LTLTab.seqt <> unenext def
+R8408:8408 LTLTab.seqt <> G:81 var
+R8395:8397 LTLTab.seqt <> phi:82 var
+prf 8678:8696 <> in_anext_in_unanext
+binder 8699:8699 <> G:83
+binder 8713:8715 <> phi:84
+R8734:8737 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8718:8719 Coq.Lists.List <> In def
+R8733:8733 LTLTab.seqt <> G:83 var
+R8722:8726 LTLTab.nnf <> anext constr
+R8728:8730 LTLTab.seqt <> phi:84 var
+R8738:8739 Coq.Lists.List <> In def
+R8746:8752 LTLTab.seqt <> unanext def
+R8754:8754 LTLTab.seqt <> G:83 var
+R8741:8743 LTLTab.seqt <> phi:84 var
+def 9029:9045 <> not_blocked_Gamma
+R9052:9055 Coq.Init.Datatypes <> list ind
+R9057:9059 LTLTab.nnf <> nnf ind
+binder 9048:9048 <> G:85
+R9067:9072 LTLTab.seqt <> doseqt rec
+binder 9063:9063 <> s:86
+R9087:9088 Coq.Init.Logic <> ::type_scope:'~'_x not
+R9089:9091 Coq.Lists.SetoidList <> InA ind
+R9109:9111 LTLTab.seqt <> s_H proj
+R9113:9113 LTLTab.seqt <> s:86 var
+R9106:9106 LTLTab.seqt <> G:85 var
+R9095:9099 LTLTab.utils <> eqset def
+R9101:9103 LTLTab.nnf <> nnf ind
+def 9129:9144 <> not_blocked_seqt
+R9151:9156 LTLTab.seqt <> doseqt rec
+binder 9147:9147 <> s:87
+R9177:9183 LTLTab.seqt <> unenext def
+R9186:9188 LTLTab.seqt <> s_G proj
+R9190:9190 LTLTab.seqt <> s:87 var
+R9202:9203 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R9214:9230 LTLTab.seqt <> not_blocked_Gamma def
+R9250:9250 LTLTab.seqt <> s:87 var
+R9233:9239 LTLTab.seqt <> unanext def
+R9242:9244 LTLTab.seqt <> s_G proj
+R9246:9246 LTLTab.seqt <> s:87 var
+binder 9274:9276 <> phi:88
+R9295:9306 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9287:9288 Coq.Lists.List <> In def
+R9290:9292 LTLTab.seqt <> phi:88 var
+R9307:9323 LTLTab.seqt <> not_blocked_Gamma def
+R9350:9350 LTLTab.seqt <> s:87 var
+R9329:9332 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R9326:9328 LTLTab.seqt <> phi:88 var
+R9333:9339 LTLTab.seqt <> unanext def
+R9342:9344 LTLTab.seqt <> s_G proj
+R9346:9346 LTLTab.seqt <> s:87 var
+rec 9367:9382 <> state_conditions
+proj 9409:9420 <> sc_no_contra
+proj 9480:9490 <> sc_no_alpha
+proj 9546:9555 <> sc_no_beta
+R9389:9394 LTLTab.seqt <> doseqt rec
+binder 9385:9385 <> s:89
+binder 9431:9431 <> n:91
+R9452:9455 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9434:9435 Coq.Lists.List <> In def
+R9446:9448 LTLTab.seqt <> s_G proj
+R9450:9450 LTLTab.seqt <> s:89 var
+R9438:9440 LTLTab.nnf <> var constr
+R9442:9442 LTLTab.seqt <> n:91 var
+R9456:9457 Coq.Init.Logic <> ::type_scope:'~'_x not
+R9458:9459 Coq.Lists.List <> In def
+R9470:9472 LTLTab.seqt <> s_G proj
+R9474:9474 LTLTab.seqt <> s:89 var
+R9462:9464 LTLTab.nnf <> neg constr
+R9466:9466 LTLTab.seqt <> n:91 var
+binder 9502:9504 <> phi:93
+R9521:9524 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9507:9508 Coq.Lists.List <> In def
+R9515:9517 LTLTab.seqt <> s_G proj
+R9519:9519 LTLTab.seqt <> s:89 var
+R9510:9512 LTLTab.seqt <> phi:93 var
+R9525:9526 Coq.Init.Logic <> ::type_scope:'~'_x not
+R9527:9537 LTLTab.nnf <> nnf_isalpha def
+R9539:9541 LTLTab.seqt <> phi:93 var
+binder 9568:9570 <> phi:95
+R9587:9590 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9573:9574 Coq.Lists.List <> In def
+R9581:9583 LTLTab.seqt <> s_G proj
+R9585:9585 LTLTab.seqt <> s:89 var
+R9576:9578 LTLTab.seqt <> phi:95 var
+R9591:9592 Coq.Init.Logic <> ::type_scope:'~'_x not
+R9593:9602 LTLTab.nnf <> nnf_isbeta def
+R9604:9606 LTLTab.seqt <> phi:95 var
+def 9624:9636 <> blocker_Gamma
+R9643:9646 Coq.Init.Datatypes <> list ind
+R9648:9650 LTLTab.nnf <> nnf ind
+binder 9639:9639 <> D:97
+R9658:9663 LTLTab.seqt <> doseqt rec
+binder 9654:9654 <> s:98
+R9678:9680 Coq.Lists.SetoidList <> InA ind
+R9698:9700 LTLTab.seqt <> s_H proj
+R9702:9702 LTLTab.seqt <> s:98 var
+R9695:9695 LTLTab.seqt <> D:97 var
+R9684:9688 LTLTab.utils <> eqset def
+R9690:9692 LTLTab.nnf <> nnf ind
+def 9718:9728 <> get_blocker
+R9744:9747 Coq.Init.Datatypes <> list ind
+R9749:9751 LTLTab.nnf <> nnf ind
+binder 9740:9740 <> D:99
+R9759:9762 Coq.Init.Datatypes <> list ind
+R9765:9768 Coq.Init.Datatypes <> list ind
+R9770:9772 LTLTab.nnf <> nnf ind
+binder 9755:9755 <> H:100
+R9804:9809 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R9832:9832 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R9779:9779 Coq.Init.Specif <> ::type_scope:'{'_x_'|'_x_'}' not
+R9781:9783 Coq.Init.Specif <> ::type_scope:'{'_x_'|'_x_'}' not
+R9803:9803 Coq.Init.Specif <> ::type_scope:'{'_x_'|'_x_'}' not
+binder 9780:9780 <> L:101
+R9790:9793 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R9784:9785 Coq.Lists.List <> In def
+R9789:9789 LTLTab.seqt <> H:100 var
+R9787:9787 LTLTab.seqt <> L:101 var
+R9794:9798 LTLTab.utils <> eqset def
+R9802:9802 LTLTab.seqt <> D:99 var
+R9800:9800 LTLTab.seqt <> L:101 var
+R9810:9811 Coq.Init.Logic <> ::type_scope:'~'_x not
+R9812:9814 Coq.Lists.SetoidList <> InA ind
+R9831:9831 LTLTab.seqt <> H:100 var
+R9829:9829 LTLTab.seqt <> D:99 var
+R9818:9822 LTLTab.utils <> eqset def
+R9824:9826 LTLTab.nnf <> nnf ind
+R10032:10040 LTLTab.utils <> eqset_dec thm
+R10042:10050 LTLTab.nnf <> nnf_eqdec def
+R10032:10040 LTLTab.utils <> eqset_dec thm
+R10042:10050 LTLTab.nnf <> nnf_eqdec def
+R10196:10204 LTLTab.utils <> eqset_sym thm
+R10196:10204 LTLTab.utils <> eqset_sym thm
+def 10263:10275 <> get_blocker_G
+R10282:10285 Coq.Init.Datatypes <> list ind
+R10287:10289 LTLTab.nnf <> nnf ind
+binder 10278:10278 <> D:102
+R10297:10302 LTLTab.seqt <> doseqt rec
+binder 10293:10293 <> s:103
+R10340:10343 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R10365:10365 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R10309:10309 Coq.Init.Specif <> ::type_scope:'{'_x_'|'_x_'}' not
+R10311:10313 Coq.Init.Specif <> ::type_scope:'{'_x_'|'_x_'}' not
+R10339:10339 Coq.Init.Specif <> ::type_scope:'{'_x_'|'_x_'}' not
+binder 10310:10310 <> L:104
+R10326:10329 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R10314:10315 Coq.Lists.List <> In def
+R10320:10322 LTLTab.seqt <> s_H proj
+R10324:10324 LTLTab.seqt <> s:103 var
+R10317:10317 LTLTab.seqt <> L:104 var
+R10330:10334 LTLTab.utils <> eqset def
+R10338:10338 LTLTab.seqt <> D:102 var
+R10336:10336 LTLTab.seqt <> L:104 var
+R10344:10360 LTLTab.seqt <> not_blocked_Gamma def
+R10364:10364 LTLTab.seqt <> s:103 var
+R10362:10362 LTLTab.seqt <> D:102 var
+R10387:10397 LTLTab.seqt <> get_blocker def
+R10402:10404 LTLTab.seqt <> s_H proj
+R10387:10397 LTLTab.seqt <> get_blocker def
+R10402:10404 LTLTab.seqt <> s_H proj
+prf 10501:10516 <> jump_child_pseqt
+R10526:10532 LTLTab.seqt <> rdoseqt def
+binder 10521:10522 <> ss:105
+R10543:10558 LTLTab.seqt <> state_conditions rec
+R10561:10561 Coq.Program.Utils <> ::program_scope:'`'_x not
+R10562:10563 LTLTab.seqt <> ss:105 var
+binder 10538:10539 <> sc:106
+R10575:10590 LTLTab.seqt <> not_blocked_seqt def
+R10593:10593 Coq.Program.Utils <> ::program_scope:'`'_x not
+R10594:10595 LTLTab.seqt <> ss:105 var
+binder 10570:10571 <> nb:107
+R10624:10625 Coq.Init.Logic <> ::type_scope:'~'_x not
+R10626:10628 Coq.Lists.SetoidList <> InA ind
+R10656:10658 LTLTab.seqt <> s_H proj
+R10661:10661 Coq.Program.Utils <> ::program_scope:'`'_x not
+R10662:10663 LTLTab.seqt <> ss:105 var
+R10644:10646 LTLTab.seqt <> s_G proj
+R10649:10649 Coq.Program.Utils <> ::program_scope:'`'_x not
+R10650:10651 LTLTab.seqt <> ss:105 var
+R10632:10636 LTLTab.utils <> eqset def
+R10638:10640 LTLTab.nnf <> nnf ind
+binder 10602:10616 <> parent_not_in_H:108
+R10672:10677 Coq.Lists.List <> Forall ind
+R10688:10697 LTLTab.seqt <> jump_child def
+R10700:10700 Coq.Program.Utils <> ::program_scope:'`'_x not
+R10701:10702 LTLTab.seqt <> ss:105 var
+R10679:10685 LTLTab.seqt <> regular rec
+R10773:10782 LTLTab.seqt <> jump_child def
+R10797:10803 LTLTab.seqt <> unenext def
+R10806:10808 LTLTab.seqt <> s_G proj
+R10797:10803 LTLTab.seqt <> unenext def
+R10806:10808 LTLTab.seqt <> s_G proj
+R11000:11006 LTLTab.seqt <> nodup_H proj
+R11000:11006 LTLTab.seqt <> nodup_H proj
+R11054:11069 LTLTab.closure <> in_cl_list_anext thm
+R11054:11069 LTLTab.closure <> in_cl_list_anext thm
+R11087:11094 LTLTab.seqt <> G_incl_R proj
+R11087:11094 LTLTab.seqt <> G_incl_R proj
+R11108:11126 LTLTab.seqt <> in_unanext_in_anext thm
+R11108:11126 LTLTab.seqt <> in_unanext_in_anext thm
+R11231:11238 LTLTab.seqt <> G_incl_R proj
+R11231:11238 LTLTab.seqt <> G_incl_R proj
+R11265:11272 LTLTab.seqt <> H_incl_R proj
+R11265:11272 LTLTab.seqt <> H_incl_R proj
+R11321:11333 Coq.Lists.List <> Forall_forall thm
+R11321:11333 Coq.Lists.List <> Forall_forall thm
+R11371:11380 Coq.Lists.List <> in_map_iff thm
+R11371:11380 Coq.Lists.List <> in_map_iff thm
+R11574:11580 LTLTab.seqt <> nodup_H proj
+R11574:11580 LTLTab.seqt <> nodup_H proj
+R11683:11698 LTLTab.closure <> in_cl_list_enext thm
+R11683:11698 LTLTab.closure <> in_cl_list_enext thm
+R11716:11723 LTLTab.seqt <> G_incl_R proj
+R11716:11723 LTLTab.seqt <> G_incl_R proj
+R11745:11763 LTLTab.seqt <> in_unenext_in_enext thm
+R11745:11763 LTLTab.seqt <> in_unenext_in_enext thm
+R11821:11836 LTLTab.closure <> in_cl_list_anext thm
+R11821:11836 LTLTab.closure <> in_cl_list_anext thm
+R11854:11861 LTLTab.seqt <> G_incl_R proj
+R11854:11861 LTLTab.seqt <> G_incl_R proj
+R11883:11901 LTLTab.seqt <> in_unanext_in_anext thm
+R11883:11901 LTLTab.seqt <> in_unanext_in_anext thm
+R12034:12041 LTLTab.seqt <> G_incl_R proj
+R12034:12041 LTLTab.seqt <> G_incl_R proj
+R12082:12089 LTLTab.seqt <> H_incl_R proj
+R12082:12089 LTLTab.seqt <> H_incl_R proj
+def 12132:12156 <> all_jump_children_regular
+R12166:12172 LTLTab.seqt <> rdoseqt def
+binder 12161:12162 <> ss:109
+R12183:12198 LTLTab.seqt <> state_conditions rec
+R12201:12201 Coq.Program.Utils <> ::program_scope:'`'_x not
+R12202:12203 LTLTab.seqt <> ss:109 var
+binder 12178:12179 <> sc:110
+R12215:12230 LTLTab.seqt <> not_blocked_seqt def
+R12233:12233 Coq.Program.Utils <> ::program_scope:'`'_x not
+R12234:12235 LTLTab.seqt <> ss:109 var
+binder 12210:12211 <> nb:111
+R12264:12265 Coq.Init.Logic <> ::type_scope:'~'_x not
+R12266:12268 Coq.Lists.SetoidList <> InA ind
+R12296:12298 LTLTab.seqt <> s_H proj
+R12301:12301 Coq.Program.Utils <> ::program_scope:'`'_x not
+R12302:12303 LTLTab.seqt <> ss:109 var
+R12284:12286 LTLTab.seqt <> s_G proj
+R12289:12289 Coq.Program.Utils <> ::program_scope:'`'_x not
+R12290:12291 LTLTab.seqt <> ss:109 var
+R12272:12276 LTLTab.utils <> eqset def
+R12278:12280 LTLTab.nnf <> nnf ind
+binder 12242:12256 <> parent_not_in_H:112
+R12312:12317 Coq.Lists.List <> Forall ind
+R12328:12337 LTLTab.seqt <> jump_child def
+R12340:12340 Coq.Program.Utils <> ::program_scope:'`'_x not
+R12341:12342 LTLTab.seqt <> ss:109 var
+R12319:12325 LTLTab.seqt <> regular rec
+R12351:12366 LTLTab.seqt <> jump_child_pseqt thm
+R12377:12391 LTLTab.seqt <> parent_not_in_H:112 var
+R12374:12375 LTLTab.seqt <> nb:111 var
+R12371:12372 LTLTab.seqt <> sc:110 var
+R12368:12369 LTLTab.seqt <> ss:109 var
+def 12406:12417 <> rdoseqt_list
+R12424:12425 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R12434:12436 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R12448:12456 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R12480:12481 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R12437:12440 Coq.Init.Datatypes <> list ind
+R12442:12447 LTLTab.seqt <> doseqt rec
+binder 12426:12433 <> children:113
+R12457:12462 Coq.Lists.List <> Forall ind
+R12472:12479 LTLTab.seqt <> children:113 var
+R12464:12470 LTLTab.seqt <> regular rec
+def 12496:12511 <> jump_child_sseqt
+R12521:12527 LTLTab.seqt <> rdoseqt def
+binder 12516:12517 <> ss:114
+R12538:12553 LTLTab.seqt <> state_conditions rec
+R12556:12556 Coq.Program.Utils <> ::program_scope:'`'_x not
+R12557:12558 LTLTab.seqt <> ss:114 var
+binder 12533:12534 <> sc:115
+R12570:12585 LTLTab.seqt <> not_blocked_seqt def
+R12588:12588 Coq.Program.Utils <> ::program_scope:'`'_x not
+R12589:12590 LTLTab.seqt <> ss:114 var
+binder 12565:12566 <> nb:116
+R12619:12620 Coq.Init.Logic <> ::type_scope:'~'_x not
+R12621:12623 Coq.Lists.SetoidList <> InA ind
+R12651:12653 LTLTab.seqt <> s_H proj
+R12656:12656 Coq.Program.Utils <> ::program_scope:'`'_x not
+R12657:12658 LTLTab.seqt <> ss:114 var
+R12639:12641 LTLTab.seqt <> s_G proj
+R12644:12644 Coq.Program.Utils <> ::program_scope:'`'_x not
+R12645:12646 LTLTab.seqt <> ss:114 var
+R12627:12631 LTLTab.utils <> eqset def
+R12633:12635 LTLTab.nnf <> nnf ind
+binder 12597:12611 <> parent_not_in_H:117
+R12667:12678 LTLTab.seqt <> rdoseqt_list def
+R12685:12689 Coq.Init.Specif <> exist constr
+R12717:12732 LTLTab.seqt <> jump_child_pseqt thm
+R12743:12757 LTLTab.seqt <> parent_not_in_H:117 var
+R12740:12741 LTLTab.seqt <> nb:116 var
+R12737:12738 LTLTab.seqt <> sc:115 var
+R12734:12735 LTLTab.seqt <> ss:114 var
+R12694:12703 LTLTab.seqt <> jump_child def
+R12706:12706 Coq.Program.Utils <> ::program_scope:'`'_x not
+R12707:12708 LTLTab.seqt <> ss:114 var
+def 12775:12783 <> get_eunts
+R12790:12793 Coq.Init.Datatypes <> list ind
+R12795:12797 LTLTab.nnf <> nnf ind
+binder 12786:12786 <> G:118
+R12802:12805 Coq.Init.Datatypes <> list ind
+R12807:12809 LTLTab.nnf <> nnf ind
+R12822:12822 LTLTab.seqt <> G:118 var
+R12833:12834 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R12851:12852 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R12870:12873 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R12858:12861 LTLTab.nnf <> eunt constr
+R12893:12896 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R12881:12884 LTLTab.nnf <> eunt constr
+R12897:12905 LTLTab.seqt <> get_eunts:119 def
+R12916:12919 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R12933:12941 LTLTab.seqt <> get_eunts:119 def
+def 12964:12972 <> get_aunts
+R12979:12982 Coq.Init.Datatypes <> list ind
+R12984:12986 LTLTab.nnf <> nnf ind
+binder 12975:12975 <> G:121
+R12991:12994 Coq.Init.Datatypes <> list ind
+R12996:12998 LTLTab.nnf <> nnf ind
+R13011:13011 LTLTab.seqt <> G:121 var
+R13022:13023 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R13040:13041 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R13059:13062 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R13047:13050 LTLTab.nnf <> aunt constr
+R13082:13085 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R13070:13073 LTLTab.nnf <> aunt constr
+R13086:13094 LTLTab.seqt <> get_aunts:122 def
+R13105:13108 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R13122:13130 LTLTab.seqt <> get_aunts:122 def
+prf 13150:13166 <> eunt_in_get_eunts
+binder 13177:13179 <> phi:124
+binder 13181:13183 <> psi:125
+binder 13185:13185 <> G:126
+R13209:13212 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13190:13191 Coq.Lists.List <> In def
+R13208:13208 LTLTab.seqt <> G:126 var
+R13194:13197 LTLTab.nnf <> eunt constr
+R13203:13205 LTLTab.seqt <> psi:125 var
+R13199:13201 LTLTab.seqt <> phi:124 var
+R13213:13214 Coq.Lists.List <> In def
+R13232:13240 LTLTab.seqt <> get_eunts def
+R13242:13242 LTLTab.seqt <> G:126 var
+R13217:13220 LTLTab.nnf <> eunt constr
+R13226:13228 LTLTab.seqt <> psi:125 var
+R13222:13224 LTLTab.seqt <> phi:124 var
+prf 13455:13471 <> aunt_in_get_aunts
+binder 13482:13484 <> phi:127
+binder 13486:13488 <> psi:128
+binder 13490:13490 <> G:129
+R13514:13517 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13495:13496 Coq.Lists.List <> In def
+R13513:13513 LTLTab.seqt <> G:129 var
+R13499:13502 LTLTab.nnf <> aunt constr
+R13508:13510 LTLTab.seqt <> psi:128 var
+R13504:13506 LTLTab.seqt <> phi:127 var
+R13518:13519 Coq.Lists.List <> In def
+R13537:13545 LTLTab.seqt <> get_aunts def
+R13547:13547 LTLTab.seqt <> G:129 var
+R13522:13525 LTLTab.nnf <> aunt constr
+R13531:13533 LTLTab.seqt <> psi:128 var
+R13527:13529 LTLTab.seqt <> phi:127 var
+prf 13760:13778 <> eunt_only_get_eunts
+binder 13781:13781 <> G:130
+binder 13793:13794 <> xi:131
+R13816:13821 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13797:13798 Coq.Lists.List <> In def
+R13804:13812 LTLTab.seqt <> get_eunts def
+R13814:13814 LTLTab.seqt <> G:130 var
+R13800:13801 LTLTab.seqt <> xi:131 var
+R13822:13828 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R13836:13837 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 13829:13831 <> phi:132
+binder 13833:13835 <> psi:133
+R13840:13842 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13838:13839 LTLTab.seqt <> xi:131 var
+R13843:13846 LTLTab.nnf <> eunt constr
+R13852:13854 LTLTab.seqt <> psi:133 var
+R13848:13850 LTLTab.seqt <> phi:132 var
+prf 14100:14118 <> aunt_only_get_aunts
+binder 14121:14121 <> G:134
+binder 14133:14134 <> xi:135
+R14156:14161 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14137:14138 Coq.Lists.List <> In def
+R14144:14152 LTLTab.seqt <> get_aunts def
+R14154:14154 LTLTab.seqt <> G:134 var
+R14140:14141 LTLTab.seqt <> xi:135 var
+R14162:14168 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R14176:14177 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 14169:14171 <> phi:136
+binder 14173:14175 <> psi:137
+R14180:14182 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14178:14179 LTLTab.seqt <> xi:135 var
+R14183:14186 LTLTab.nnf <> aunt constr
+R14192:14194 LTLTab.seqt <> psi:137 var
+R14188:14190 LTLTab.seqt <> phi:136 var
+prf 14441:14452 <> get_eunts_in
+binder 14463:14463 <> G:138
+binder 14465:14466 <> xi:139
+R14488:14491 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14469:14470 Coq.Lists.List <> In def
+R14476:14484 LTLTab.seqt <> get_eunts def
+R14486:14486 LTLTab.seqt <> G:138 var
+R14472:14473 LTLTab.seqt <> xi:139 var
+R14492:14493 Coq.Lists.List <> In def
+R14498:14498 LTLTab.seqt <> G:138 var
+R14495:14496 LTLTab.seqt <> xi:139 var
+prf 14721:14732 <> get_aunts_in
+binder 14743:14743 <> G:140
+binder 14745:14746 <> xi:141
+R14768:14771 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14749:14750 Coq.Lists.List <> In def
+R14756:14764 LTLTab.seqt <> get_aunts def
+R14766:14766 LTLTab.seqt <> G:140 var
+R14752:14753 LTLTab.seqt <> xi:141 var
+R14772:14773 Coq.Lists.List <> In def
+R14778:14778 LTLTab.seqt <> G:140 var
+R14775:14776 LTLTab.seqt <> xi:141 var

@@ -1,0 +1,276 @@
+DIGEST a058fbf1eb5dc04f4e3ea28a5f0e40b7
+FLTLTab.nnf
+R15:18 Coq.Lists.List <> <> lib
+R36:42 Coq.Lists.ListSet <> <> lib
+R52:64 Coq.Lists.List ListNotations <> mod
+R82:87 Coq.Strings.String <> <> lib
+ind 152:154 <> nnf
+constr 170:172 <> var
+constr 191:193 <> neg
+constr 212:214 <> and
+constr 236:237 <> or
+constr 259:262 <> ebef
+constr 284:287 <> eunt
+constr 309:312 <> abef
+constr 334:337 <> aunt
+constr 359:363 <> enext
+constr 381:385 <> anext
+R179:184 Coq.Strings.String <> string ind
+binder 175:175 <> p:3
+R200:205 Coq.Strings.String <> string ind
+binder 196:196 <> p:4
+R227:229 LTLTab.nnf <> nnf:1 ind
+binder 217:219 <> phi:5
+binder 221:223 <> psi:6
+R250:252 LTLTab.nnf <> nnf:1 ind
+binder 240:242 <> phi:7
+binder 244:246 <> psi:8
+R275:277 LTLTab.nnf <> nnf:1 ind
+binder 265:267 <> phi:9
+binder 269:271 <> psi:10
+R300:302 LTLTab.nnf <> nnf:1 ind
+binder 290:292 <> phi:11
+binder 294:296 <> psi:12
+R325:327 LTLTab.nnf <> nnf:1 ind
+binder 315:317 <> phi:13
+binder 319:321 <> psi:14
+R350:352 LTLTab.nnf <> nnf:1 ind
+binder 340:342 <> phi:15
+binder 344:346 <> psi:16
+R372:374 LTLTab.nnf <> nnf:1 ind
+binder 366:368 <> phi:17
+R394:396 LTLTab.nnf <> nnf:1 ind
+binder 388:390 <> phi:18
+scheme 152:154 <> nnf_rect
+scheme 152:154 <> nnf_ind
+scheme 152:154 <> nnf_rec
+scheme 152:154 <> nnf_sind
+def 413:420 <> nnf_true
+R426:427 LTLTab.nnf <> or constr
+R439:441 LTLTab.nnf <> neg constr
+R430:432 LTLTab.nnf <> var constr
+def 459:467 <> nnf_false
+R472:474 LTLTab.nnf <> and constr
+R486:488 LTLTab.nnf <> neg constr
+R477:479 LTLTab.nnf <> var constr
+def 507:515 <> nnf_eqdec
+R528:530 LTLTab.nnf <> nnf ind
+binder 518:520 <> phi:19
+binder 522:524 <> psi:20
+R535:535 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R545:549 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R560:560 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R539:541 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R536:538 LTLTab.nnf <> phi:19 var
+R542:544 LTLTab.nnf <> psi:20 var
+R553:556 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R550:552 LTLTab.nnf <> phi:19 var
+R557:559 LTLTab.nnf <> psi:20 var
+R593:602 Coq.Strings.String <> string_dec def
+R593:602 Coq.Strings.String <> string_dec def
+R593:602 Coq.Strings.String <> string_dec def
+def 626:634 <> erase_nnf
+R639:648 Coq.Lists.ListSet <> set_remove def
+R650:658 LTLTab.nnf <> nnf_eqdec def
+def 672:680 <> inter_nnf
+R685:693 Coq.Lists.ListSet <> set_inter def
+R695:703 LTLTab.nnf <> nnf_eqdec def
+def 717:726 <> remove_nnf
+R731:736 Coq.Lists.List <> remove def
+R738:746 LTLTab.nnf <> nnf_eqdec def
+def 759:765 <> neg_nnf
+R773:775 LTLTab.nnf <> nnf ind
+binder 768:769 <> xi:21
+R780:782 LTLTab.nnf <> nnf ind
+R795:796 LTLTab.nnf <> xi:21 var
+R807:809 LTLTab.nnf <> var constr
+R822:824 LTLTab.nnf <> neg constr
+R832:834 LTLTab.nnf <> neg constr
+R847:849 LTLTab.nnf <> var constr
+R857:859 LTLTab.nnf <> and constr
+R872:873 LTLTab.nnf <> or constr
+R890:896 LTLTab.nnf <> neg_nnf:22 def
+R876:882 LTLTab.nnf <> neg_nnf:22 def
+R907:908 LTLTab.nnf <> or constr
+R922:924 LTLTab.nnf <> and constr
+R941:947 LTLTab.nnf <> neg_nnf:22 def
+R927:933 LTLTab.nnf <> neg_nnf:22 def
+R958:961 LTLTab.nnf <> ebef constr
+R974:977 LTLTab.nnf <> aunt constr
+R980:986 LTLTab.nnf <> neg_nnf:22 def
+R1001:1004 LTLTab.nnf <> eunt constr
+R1017:1020 LTLTab.nnf <> abef constr
+R1023:1029 LTLTab.nnf <> neg_nnf:22 def
+R1044:1047 LTLTab.nnf <> abef constr
+R1060:1063 LTLTab.nnf <> eunt constr
+R1066:1072 LTLTab.nnf <> neg_nnf:22 def
+R1087:1090 LTLTab.nnf <> aunt constr
+R1103:1106 LTLTab.nnf <> ebef constr
+R1109:1115 LTLTab.nnf <> neg_nnf:22 def
+R1130:1134 LTLTab.nnf <> enext constr
+R1146:1150 LTLTab.nnf <> anext constr
+R1153:1159 LTLTab.nnf <> neg_nnf:22 def
+R1170:1174 LTLTab.nnf <> anext constr
+R1186:1190 LTLTab.nnf <> enext constr
+R1193:1199 LTLTab.nnf <> neg_nnf:22 def
+def 1225:1235 <> nnf_isalpha
+R1244:1246 LTLTab.nnf <> nnf ind
+binder 1238:1240 <> phi:24
+R1267:1269 LTLTab.nnf <> phi:24 var
+R1280:1282 LTLTab.nnf <> and constr
+R1291:1294 Coq.Init.Logic <> True ind
+R1300:1303 LTLTab.nnf <> abef constr
+R1312:1315 Coq.Init.Logic <> True ind
+R1321:1324 LTLTab.nnf <> ebef constr
+R1333:1336 Coq.Init.Logic <> True ind
+R1369:1373 Coq.Init.Logic <> False ind
+def 1394:1408 <> nnf_isalpha_dec
+R1417:1419 LTLTab.nnf <> nnf ind
+binder 1411:1413 <> phi:26
+R1426:1426 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R1442:1446 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R1464:1464 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R1427:1437 LTLTab.nnf <> nnf_isalpha def
+R1439:1441 LTLTab.nnf <> phi:26 var
+R1447:1448 Coq.Init.Logic <> ::type_scope:'~'_x not
+R1449:1459 LTLTab.nnf <> nnf_isalpha def
+R1461:1463 LTLTab.nnf <> phi:26 var
+def 1536:1544 <> get_alpha
+R1559:1562 Coq.Init.Datatypes <> list ind
+R1564:1566 LTLTab.nnf <> nnf ind
+binder 1555:1555 <> G:27
+R1612:1617 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R1659:1659 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R1571:1571 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1575:1577 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1581:1583 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1611:1611 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R1578:1580 LTLTab.nnf <> nnf ind
+binder 1572:1574 <> phi:28
+R1592:1595 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R1584:1585 Coq.Lists.List <> In def
+R1591:1591 LTLTab.nnf <> G:27 var
+R1587:1589 LTLTab.nnf <> phi:28 var
+R1596:1606 LTLTab.nnf <> nnf_isalpha def
+R1608:1610 LTLTab.nnf <> phi:28 var
+binder 1625:1627 <> phi:29
+R1638:1641 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1630:1631 Coq.Lists.List <> In def
+R1637:1637 LTLTab.nnf <> G:27 var
+R1633:1635 LTLTab.nnf <> phi:29 var
+R1642:1643 Coq.Init.Logic <> ::type_scope:'~'_x not
+R1644:1654 LTLTab.nnf <> nnf_isalpha def
+R1656:1658 LTLTab.nnf <> phi:29 var
+R1822:1836 LTLTab.nnf <> nnf_isalpha_dec def
+R1822:1836 LTLTab.nnf <> nnf_isalpha_dec def
+def 2030:2035 <> df_nnf
+R2039:2041 LTLTab.nnf <> nnf ind
+R2046:2048 LTLTab.nnf <> var constr
+def 2101:2110 <> nnf_alpha1
+R2118:2120 LTLTab.nnf <> nnf ind
+binder 2113:2114 <> xi:30
+R2125:2127 LTLTab.nnf <> nnf ind
+R2140:2141 LTLTab.nnf <> xi:30 var
+R2152:2154 LTLTab.nnf <> and constr
+R2175:2178 LTLTab.nnf <> ebef constr
+R2191:2197 LTLTab.nnf <> neg_nnf def
+R2207:2210 LTLTab.nnf <> abef constr
+R2223:2229 LTLTab.nnf <> neg_nnf def
+R2250:2255 LTLTab.nnf <> df_nnf def
+def 2276:2285 <> nnf_alpha2
+R2293:2295 LTLTab.nnf <> nnf ind
+binder 2288:2289 <> xi:32
+R2300:2302 LTLTab.nnf <> nnf ind
+R2315:2316 LTLTab.nnf <> xi:32 var
+R2327:2329 LTLTab.nnf <> and constr
+R2350:2353 LTLTab.nnf <> ebef constr
+R2366:2367 LTLTab.nnf <> or constr
+R2374:2378 LTLTab.nnf <> enext constr
+R2381:2384 LTLTab.nnf <> ebef constr
+R2400:2403 LTLTab.nnf <> abef constr
+R2416:2417 LTLTab.nnf <> or constr
+R2424:2428 LTLTab.nnf <> anext constr
+R2431:2434 LTLTab.nnf <> abef constr
+R2461:2466 LTLTab.nnf <> df_nnf def
+def 2487:2496 <> nnf_isbeta
+R2505:2507 LTLTab.nnf <> nnf ind
+binder 2499:2501 <> phi:34
+R2528:2530 LTLTab.nnf <> phi:34 var
+R2541:2542 LTLTab.nnf <> or constr
+R2552:2555 Coq.Init.Logic <> True ind
+R2561:2564 LTLTab.nnf <> eunt constr
+R2573:2576 Coq.Init.Logic <> True ind
+R2582:2585 LTLTab.nnf <> aunt constr
+R2594:2597 Coq.Init.Logic <> True ind
+R2614:2618 Coq.Init.Logic <> False ind
+def 2639:2652 <> nnf_isbeta_dec
+R2661:2663 LTLTab.nnf <> nnf ind
+binder 2655:2657 <> phi:36
+R2670:2670 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R2685:2689 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R2706:2706 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R2671:2680 LTLTab.nnf <> nnf_isbeta def
+R2682:2684 LTLTab.nnf <> phi:36 var
+R2690:2691 Coq.Init.Logic <> ::type_scope:'~'_x not
+R2692:2701 LTLTab.nnf <> nnf_isbeta def
+R2703:2705 LTLTab.nnf <> phi:36 var
+def 2778:2785 <> get_beta
+R2800:2803 Coq.Init.Datatypes <> list ind
+R2805:2807 LTLTab.nnf <> nnf ind
+binder 2796:2796 <> G:37
+R2852:2857 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R2898:2898 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R2812:2812 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R2816:2818 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R2822:2824 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R2851:2851 Coq.Init.Specif <> ::type_scope:'{'_x_':'_x_'|'_x_'}' not
+R2819:2821 LTLTab.nnf <> nnf ind
+binder 2813:2815 <> phi:38
+R2833:2836 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2825:2826 Coq.Lists.List <> In def
+R2832:2832 LTLTab.nnf <> G:37 var
+R2828:2830 LTLTab.nnf <> phi:38 var
+R2837:2846 LTLTab.nnf <> nnf_isbeta def
+R2848:2850 LTLTab.nnf <> phi:38 var
+binder 2865:2867 <> phi:39
+R2878:2881 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2870:2871 Coq.Lists.List <> In def
+R2877:2877 LTLTab.nnf <> G:37 var
+R2873:2875 LTLTab.nnf <> phi:39 var
+R2882:2883 Coq.Init.Logic <> ::type_scope:'~'_x not
+R2884:2893 LTLTab.nnf <> nnf_isbeta def
+R2895:2897 LTLTab.nnf <> phi:39 var
+R3061:3074 LTLTab.nnf <> nnf_isbeta_dec def
+R3061:3074 LTLTab.nnf <> nnf_isbeta_dec def
+def 3266:3274 <> nnf_beta1
+R3282:3284 LTLTab.nnf <> nnf ind
+binder 3277:3278 <> xi:40
+R3289:3291 LTLTab.nnf <> nnf ind
+R3304:3305 LTLTab.nnf <> xi:40 var
+R3316:3317 LTLTab.nnf <> or constr
+R3339:3342 LTLTab.nnf <> eunt constr
+R3363:3366 LTLTab.nnf <> aunt constr
+R3398:3403 LTLTab.nnf <> df_nnf def
+def 3424:3432 <> nnf_beta2
+R3440:3442 LTLTab.nnf <> nnf ind
+binder 3435:3436 <> xi:42
+R3447:3449 LTLTab.nnf <> nnf ind
+R3462:3463 LTLTab.nnf <> xi:42 var
+R3474:3475 LTLTab.nnf <> or constr
+R3497:3500 LTLTab.nnf <> eunt constr
+R3513:3515 LTLTab.nnf <> and constr
+R3522:3526 LTLTab.nnf <> enext constr
+R3529:3532 LTLTab.nnf <> eunt constr
+R3548:3551 LTLTab.nnf <> aunt constr
+R3564:3566 LTLTab.nnf <> and constr
+R3573:3577 LTLTab.nnf <> anext constr
+R3580:3583 LTLTab.nnf <> aunt constr
+R3610:3615 LTLTab.nnf <> df_nnf def
+prf 3631:3644 <> beta_not_alpha
+binder 3647:3649 <> phi:44
+R3668:3671 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3654:3663 LTLTab.nnf <> nnf_isbeta def
+R3665:3667 LTLTab.nnf <> phi:44 var
+R3672:3673 Coq.Init.Logic <> ::type_scope:'~'_x not
+R3674:3684 LTLTab.nnf <> nnf_isalpha def
+R3686:3688 LTLTab.nnf <> phi:44 var
